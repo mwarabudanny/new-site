@@ -1,0 +1,367 @@
+<html>
+
+<head>
+    <meta HTTP-EQUIV="refresh" CONTENT="30000">
+    <meta http-equiv="Cache-control" content="public">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1.0,maximum-scale=1,user-scalable=no" />
+    <meta http-equiv="imagetoolbar" content="no" />
+
+    <title>Loopxer</title>
+
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="scripts/includes/pull2refresh.css" type="text/css" />
+    <script src="scripts/jsmobile/pull2refresh.js"></script>
+    <script src="scripts/jsmobile/flickr.js"></script>
+    <link rel="stylesheet" href="scripts/includes/custom.css">
+    <link rel="stylesheet" href="scripts/jsmobile/jquery.mobile-1.4.5.min.css">
+
+    <script src="Data/postersData/eventsData.js"></script>
+    <script>
+        $(document).on('mobileinit', function() {
+            $.mobile.defaultPageTransition = 'slide';
+        });
+    </script>
+    <script src="scripts/jsmobile/jquery.mobile-1.4.5.min.js"></script>
+
+<!--this is theflickr api code-->
+   <!--this is theflickr api code <link rel="stylesheet" type="text/css" href="styleit.css">-->
+   
+     <script type="text/javascript" src="js/nonogallery.js"></script>
+           <link rel="stylesheet" type="text/css" href="styleit.css">                          
+	<link href="js/light/nanogallery_light.css" rel="stylesheet" type="text/css">
+<script type='text/javascript'>//<![CDATA[
+$(window).load(function(){
+$(document).ready(function () {
+    jQuery("#nanoGallery").nanoGallery({
+        lazyBuild:'loadData',
+    
+        colorSchemeViewer: 'dark',
+        kind: 'flickr',
+        userID: '155101188@N06',
+        photoset:'72157684163059836',
+          thumbnailWidth: 'auto',
+         thumbnailHeight: 210,
+        thumbnailGutterWidth : 3,
+        thumbnailGutterHeight : 3,
+       /* thumbnailWidth: 125,
+        thumbnailHeight: 125,*/
+        viewerDisplayLogo: true,
+        thumbnailLazyLoad: true,
+        thumbnailAlignment:'center',
+         thumbnailLabel: {
+            position: 'overImageOnMiddle',
+            display: false,
+            displayDescription: false,
+            titleMaxLength: 20,
+            hideIcons: true,
+            align: 'center',
+            itemsCount: 'description'            
+        },
+         colorScheme: { thumbnail:{ labelBackground: '#000 !important' } },
+      
+        theme: 'light',
+    });
+});
+});//]]> 
+
+</script>
+
+  
+ <script type="text/javascript">
+$(window).load(function() {
+	$(".loader").fadeOut("slow");
+})
+    </script>
+    <style>
+        .loader {
+            position: fixed;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            
+        filter: alpha(opacity=75); /* internet explorer */
+        -khtml-opacity: 0.70; /* khtml, old safari */
+        -moz-opacity: 0.70; /* mozilla, netscape */
+        opacity: 0.70; /* fx, safari, opera */
+            background: url('loader2.gif') 50% 50% no-repeat rgb(249,249,249);
+        }
+    </style>
+</head>
+
+<body>
+    <!--instagram://user?username=USERNAME"-->
+    <!------------------------------------------------------header ---------------------------------------------------------------------------->
+  <div class="loader"></div>
+    <div data-role="page" id="main" data-dom-cache="true" style="background:url('blur.jpg');background-attachment:fixed; background-size:cover;height:100%;width:100%;background-position:center">
+
+        <div data-role="header" data-position="fixed" data-tap-toggle="true" data-fullscreen="false" class="shadow">
+            <div class="logo"><img height="38"></div>
+            
+            <a href="#about" class="ui-btn-icon ui-nodisc-icon ui-alt-icon" data-transition="flow" data-icon="bars" data-iconshadow="false" data-iconpos="notext" style="background-color:transparent !important;
+               border:none;
+               border-style:hidden;
+               -webkit-box-shadow:none;
+               box-shadow:none;">about</a>
+
+            <a href="share:" class="ui-btn-icon ui-nodisc-icon  ui-alt-icon" data-icon="action" data-iconshadow="false" data-iconpos="notext" style="background-color:transparent !important;
+               border:none;
+               border-style:hidden;
+               -webkit-box-shadow:none;
+               box-shadow:none;">share</a>
+
+        </div>
+        <!-- /header -->
+
+        <!-------------------------------------------------MENU------------------------------------------------------------------------------------------- -->
+        <div role="main">
+            <br>
+            <br>
+            <br>
+            <br>
+
+            <br>
+            <br>
+            <a href="#browse" id="find-a-party-button" data-iconpos="bottom" data-mini="true" data-prefetch data-transition="slide" data-role="button">FIND HOTSPOTS<br></a>
+            <a href="events.html" id="events-btn" data-iconpos="bottom" data-mini="true" data-ajax="false" data-transition="slide" data-role="button">UPCOMING EVENTS<br></a>
+            <a href="specials.html" id="events-btn" data-iconpos="bottom" data-mini="true" data-ajax="false" data-transition="slide" data-role="button">SPECIALS<br></a>
+           
+        </div>
+
+
+    </div>
+    <!-- /page -->
+
+    <!------------------------------------------------------BROWSE ---------------------------------------------------------------------------->
+
+    <div data-role="page" id="browse" data-dom-cache="true">
+
+
+
+        <div role="main" data-direction="reverse">
+
+            <form class="ui filterable" data-role="header" data-position="fixed" data-tap-toggle="true" id="form">
+                <input id="searchForCollapsibleSetChildren" Style="color:black;opacity:0.7;background-color:transparent;border-bottom:1px solid;border-color:purple" data-wrapper-class="ui-custom" data-type="search" data-mini="true" autocomplete="off" placeholder="Search  ">
+            </form>
+
+            <a href="specials.html" id="specials" class=" ui-nodisc-icon" data-prefetch data-ajax="false" data-transition="slide" data-role="button"> SPECIALS !!! </a>
+
+            <div id="collapsiblesetForFilterChildren" data-role="collapsible-set" data-input="#searchForCollapsibleSetChildren" data-filter="true" data-inset="true" data-children="> div, > div div ul li">
+
+                <!--<div data-role="collapsible" id="custom-collapsible" data-filtertext="Easten Cape East London Port Elizabeth" data-collapsed-icon="carat-r" data-expanded-icon="carat-d" class="ui-nodisc-icon ui-alt-icon">
+                    <h3>Eastern Cape</h3>
+                    <ul data-role="listview" data-inset="false">
+                        <li data-filtertext="easten Cape East London"> <a href="provinces/eastern-cape/east-london.html" data-ajax="false" id="city">East London</a></li>
+                        <li data-filtertext="easten Cape Port Elizabeth"><a href="#" data-prefetch id="city">Port Elizabeth</a></li>
+                    </ul>
+                </div>
+                <div data-role="collapsible" id="custom-collapsible" data-filtertext="Free State Bloemfontien" data-collapsed-icon="carat-r" data-expanded-icon="carat-d" class="ui-nodisc-icon ui-alt-icon">
+                    <h3>Free State</h3>
+                    <ul data-role="listview" data-inset="false">
+                        <li data-filtertext="Free State Bloemfontien"> <a href="provinces/free-state/bloemfontien.html" id="city" data-ajax="false">Bloemfontien</a></li>
+                    </ul>
+                </div>-->
+
+                <div data-role="collapsible" id="custom-collapsible" data-filtertext="Gauteng johannesburg jozi pretoria pta East Rand West Rand" data-collapsed-icon="carat-r" data-expanded-icon="carat-d" class="ui-nodisc-icon ui-alt-icon">
+                    <h3>Gauteng</h3>
+                    <ul data-role="listview" data-inset="false" class="ui-icon-alt">
+                        <li data-filtertext="Gauteng johannesburg jozi"><a href="provinces/gauteng/johannesburg.html" id="city" data-ajax="false" data-transition="slide">Johannesburg</a></li>
+                        <li data-filtertext="Gauteng Pretoria pta "> <a href="provinces/gauteng/pretoria.html" id="city" data-ajax="false" data-transition="slide">Pretoria</a></li>
+                    </ul>
+                </div>
+                <div data-role="collapsible" id="custom-collapsible" data-filtertext="Kwazulu-Natal Durban" data-collapsed-icon="carat-r" data-expanded-icon="carat-d" class="ui-nodisc-icon ui-alt-icon">
+                    <h3>Kwazulu-Natal</h3>
+                    <ul data-role="listview" data-inset="false">
+                        <li data-filtertext="Kwazulu-Natal Durban"> <a href="provinces/kwazulu-natal/durban.html" data-prefetch data-ajax="false" id="city">Durban</a></li>
+                    </ul>
+                </div><!--
+                <div data-role="collapsible" id="custom-collapsible" data-filtertext="Limpopo Polokwane/Pietersburg" data-collapsed-icon="carat-r" data-expanded-icon="carat-d" class="ui-nodisc-icon ui-alt-icon">
+                    <h3>Limpopo</h3>
+                    <ul data-role="listview" data-inset="false" class="ui-icon-alt">
+                        <li data-filtertext="Limpopo Polokwane/Pietersburg"><a href="#cape-town" id="city" data-transition="slide" data-prefetch>Polokwane/Pietersburg</a></li>
+                    </ul>
+                </div>
+                <div data-role="collapsible" id="custom-collapsible" data-filtertext="Mpumalanga Nelspruit Witbank" data-collapsed-icon="carat-r" data-expanded-icon="carat-d" class="ui-nodisc-icon ui-alt-icon">
+                    <h3>Mpumalanga</h3>
+                    <ul data-role="listview" data-inset="false" class="ui-icon-alt">
+                        <li data-filtertext="Mpumalanga Nelspruit"><a href="#cape-town" id="city" data-transition="slide" data-prefetch> Nelspruit</a></li>
+                        <li data-filtertext="Mpumalanga Witbank"><a href="#cape-town" id="city" data-transition="slide" data-prefetch>Witbank</a></li>
+                    </ul>
+                </div>
+                <div data-role="collapsible" id="custom-collapsible" data-filtertext="Northen Cape Kimberley" data-collapsed-icon="carat-r" data-expanded-icon="carat-d" class="ui-nodisc-icon ui-alt-icon">
+                    <h3>Northen Cape</h3>
+                    <ul data-role="listview" data-inset="false" class="ui-icon-alt">
+                        <li data-filtertext="Northen Cape Kimberley"><a href="#cape-town" id="city" data-transition="slide" data-prefetch>Kimberley</a></li>
+                    </ul>
+                </div>
+                <div data-role="collapsible" id="custom-collapsible" data-filtertext="North West brits Mabopane Mmbatho Mafikeng potchefstroom" data-collapsed-icon="carat-r" data-expanded-icon="carat-d" class="ui-nodisc-icon ui-alt-icon">
+                    <h3>North West</h3>
+                    <ul data-role="listview" data-inset="false" class="ui-icon-alt">
+                        <li data-filtertext="North West brits"><a href="#cape-town" id="city" data-transition="slide" data-prefetch>Brits</a></li>
+                        <li data-filtertext="North West Mabopane"><a href="#" id="city" data-transition="slide" data-prefetch>Mabopane</a></li>
+                        <li data-filtertext="North West Mafikeng"><a href="#" id="city" data-transition="slide" data-prefetch>Mafikeng</a></li>
+                        <li data-filtertext="North West Mmbatho"><a href="#" id="city" data-transition="slide" data-prefetch>Mmbatho</a></li>
+                        <li data-filtertext="North West  potchefstroom"><a href="#" id="city" data-transition="slide" data-prefetch> potchefstroom</a></li>
+                    </ul>
+                </div>-->
+                <div data-role="collapsible" id="custom-collapsible" data-filtertext="western cape cape town " data-collapsed-icon="carat-r" data-expanded-icon="carat-d" class="ui-nodisc-icon ui-alt-icon">
+                    <h3>Western Cape</h3>
+                    <ul data-role="listview" data-inset="false" class="ui-icon-alt">
+                        <li data-filtertext="western cape cape town"><a href="provinces/western-cape/cape-town.html"  data-ajax="false" id="city" data-transition="slide" data-prefetch>Cape town</a></li>
+
+                    </ul>
+                </div>
+                <div data-role="collapsible" id="no-resulta">
+
+                </div>
+
+
+
+            </div>
+        </div>
+
+    </div>
+    <!-- /page -->
+
+
+
+
+
+
+
+
+    <!------------------------------------------------------Terms & Condition---------------------------------------------------------------------------->
+
+    <div data-role="page" id="events">
+
+        <div data-role="header"  data-tap-toggle="false"data-position="fixed" data-fullscreen="false">
+<a href="#"  data-rel="back" class="ui-btn-icon ui-nodisc-icon ui-alt-icon" data-role="button" data-icon="carat-l"  class="ui-nodisc-icon " data-iconpos="notext"  data-iconshadow="false" 
+		  style="background-color:transparent !important;
+               border:none;
+               border-style:hidden;
+               -webkit-box-shadow:none;
+               box-shadow:none;">home
+        </a>
+        
+            <h1>events </h1>
+        </div>
+        <!-- /header -->
+
+
+        <div role="events" data-direction="reverse">
+            
+<div id="nanoGallery"></div>
+            <!--<ul data-role="listview" id="thelist">
+
+
+            </ul>-->
+
+
+
+        </div>
+
+
+
+    </div>
+    <!-- /page -->
+
+
+
+
+
+
+
+
+    <!------------------------------------------------------Terms & Condition---------------------------------------------------------------------------->
+
+    <div data-role="page" id="terms">
+
+        <div data-role="header" data-position="fixed" data-fullscreen="false" data-tap-toggle="false">
+
+            <h1>Terms & Condition </h1>
+        </div>
+        <!-- /header -->
+
+
+        <div role="main" class="ui-content">
+            <h3 class="ui-bar ui-bar-a ui-corner-all">Privacy Policy</h3>
+            <div class="ui-body" style="background:white; font-weight:normal;box-shadow:1px 3px 5px 0px rgba(100,100,100,0.49) ;   border-radius:0px; border-top:none !important;">
+
+                1.Welcome to the Party App.<br> This App is published by Kr8ed a company registered in U.S.A . By downloading or otherwise accessing the App you agree to be bound by the following terms and conditions (“Terms“) and our privacy policy and
+                our cookies policy. If you have any queries about the App or these Terms, you can contact Us . If you do not agree with these Terms, you should stop using the App immediately.
+                <br><br> 2. GENERAL RULES RELATING TO CONDUCT: Party App is made available for your own, personal use. The App must not be used for any commercial purpose whatsoever or for any illegal or unauthorised purpose. When you use the App you
+                must comply with all applicable SOUTH AFRICAN laws and with any applicable international laws, including the local laws in your country of residence (together referred to as “Applicable Laws”). You agree that when using the App you will
+                comply with all Applicable Laws and these Terms. In particular, but without limitation, you agree not to: (a) Use the App in any unlawful manner or in a manner which promotes or encourages illegal activity including (without limitation)
+                copyright infringement; or (b) Attempt to gain unauthorised access to the App or any networks, servers or computer systems connected to the App; or (c) Modify, adapt, translate or reverse engineer any part of the App or re-format or frame
+                any portion of the pages comprising the App, save to the extent expressly permitted by these Terms or by law. You agree to indemnify Future and its group companies in full and on demand from and against any loss, damage, costs or expenses
+                which they suffer or incur directly or indirectly as a result of your use of the App otherwise than in accordance with these Terms or Applicable Laws.
+                <br><br> 3. CONTENT: The copyright in all material contained on, in, or available through the App including all information, data, text, music, sound, photographs, graphics and video messages, the selection and arrangement thereof, and
+                all source code, software compilations and other material (“Material“) is owned by or licensed to Future or its group companies. All rights are reserved. You can view, print or download extracts of the Material for your own personal use
+                but you cannot otherwise copy, edit, vary, reproduce, publish, display, distribute, store, transmit, commercially exploit, disseminate in any form whatsoever or use the Material without Future’s express permission. The trademarks, service
+                marks, and logos (“Trade Marks“) contained on or in the App are owned by Future or its group companies or third party partners of Future. You cannot use, copy, edit, vary, reproduce, publish, display, distribute, store, transmit, commercially
+                exploit or disseminate the Trade Marks without the prior written consent of Future or the relevant group company or the relevant third party partner of Future.
+                <br><br> 4. LINK TO THIRD PARTIES: The App may contain links to websites operated by third parties (“Third Party Websites“). Future may monetise some of these links through the use of third party affiliate programmes. Notwithstanding such
+                affiliate programmes, Future does not have any influence or control over any such Third Party Websites and, unless otherwise stated, is not responsible for and does not endorse any Third Party Websites or their availability or contents.
+                <br><br> 5. FUTURE PRIVACY POLICY: We take your privacy very seriously. Future will only use your personal information in accordance with the terms of our privacy policy and cookies policy. By using the App you acknowledge and agree that
+                you have read and accept the terms of our app privacy policy and app cookies policy and these Terms.
+                <br><br> 6. DISCLAIMER / LIABILITY: USE OF THE APP IS AT YOUR OWN RISK. THE APP IS PROVIDED ON AN “AS IS” BASIS. TO THE MAXIMUM EXTENT PERMITTED BY LAW: (A) FUTURE DISCLAIMS ALL LIABILITY WHATSOEVER, WHETHER ARISING IN CONTRACT, TORT (INCLUDING
+                NEGLIGENCE) OR OTHERWISE IN RELATION TO THE APP; AND (B) ALL IMPLIED WARRANTIES, TERMS AND CONDITIONS RELATING TO THE APP (WHETHER IMPLIED BY STATUE, COMMON LAW OR OTHERWISE), INCLUDING (WITHOUT LIMITATION) ANY WARRANTY, TERM OR CONDITION
+                AS TO ACCURACY, COMPLETENESS, SATISFACTORY QUALITY, PERFORMANCE, FITNESS FOR PURPOSE OR ANY SPECIAL PURPOSE, AVAILABILITY, NON INFRINGEMENT, INFORMATION ACCURACY, INTEROPERABILITY, QUIET ENJOYMENT AND TITLE ARE, AS BETWEEN FUTURE AND YOU,
+                HEREBY EXCLUDED. IN PARTICULAR, BUT WITHOUT PREJUDICE TO THE FOREGOING, WE ACCEPT NO RESPONSIBILITY FOR ANY TECHNICAL FAILURE OF THE INTERNET AND/OR THE APP; OR ANY DAMAGE OR INJURY TO USERS OR THEIR EQUIPMENT AS A RESULT OF OR RELATING
+                TO THEIR USE OF THE APP. YOUR STATUTORY RIGHTS ARE NOT AFFECTED. Future will not be liable, in contract, tort (including, without limitation, negligence), under statute or otherwise, as a result of or in connection with the App, for any:
+                (i) economic loss (including, without limitation, loss of revenues, profits, contracts, business or anticipated savings); or (ii) loss of goodwill or reputation; or (iii) special or indirect or consequential loss. Nothing in these Terms
+                shall be construed as excluding or limiting the liability of Future or its group companies for death or personal injury caused by its negligence or for any other liability which cannot be excluded by English law. 7. SERVICE SUSPENSION:
+                Future reserves the right to suspend or cease providing any services relating to the apps published by it, with or without notice, and shall have no liability or responsibility to you in any manner whatsoever if it chooses to do so.
+                <br><br> 8. ADVERTISERS IN THE APP: We accept no responsibility for adverts contained within the App. If you agree to purchase goods and/or services from any third party who advertises in the App, you do so at your own risk. The advertiser,
+                not Future, is responsible for such goods and/or services and if you have any queries or complaints in relation to them, your only recourse is against the advertiser.
+                <br><br> 9. COMPETITIONS: If you take part in any competition which is run in or through the App (“Competition“), you agree to be bound by the rules of that competition and any other rules specified by Future from time to time (“Competition
+                Rules“) and by the decisions of Future, which are final in all matters relating to the Competition. Future reserves the right to disqualify any entrant and/or winner in its absolute discretion without notice in accordance with the Competition
+                Rules.
+                <br><br> 10. GENERAL: These Terms (as amended from time to time) constitute the entire agreement between you and Future concerning your use of the App. Future reserves the right to update these Terms from time to time. If it does so, the
+                updated version will be effective immediately, and the current Terms are available through a link in the App to this page. You are responsible for regularly reviewing these Terms so that you are aware of any changes to them and you will
+                be bound by the new policy upon your continued use of the App. No other variation to these Terms shall be effective unless in writing and signed by an authorised representative on behalf of Future. These Terms shall be governed by and
+                construed in accordance with English law and you agree to submit to the exclusive jurisdiction of the English Courts. If any provision(s) of these Terms is held by a court of competent jurisdiction to be invalid or unenforceable, then
+                such provision(s) shall be construed, as nearly as possible, to reflect the intentions of the parties (as reflected in the provision(s)) and all other provisions shall remain in full force and effect. Future’s failure to exercise or enforce
+                any right or provision of these Terms shall not constitute a waiver of such right or provision unless acknowledged and agreed to by Future in writing. Unless otherwise expressly stated, nothing in the Terms shall create any rights or any
+                other benefits whether pursuant to the Contracts (Rights of Third Parties) Act 1999 or otherwise in favour of any person other than you, Future and its group of companies.
+
+
+
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- 
+	<div data-role="footer">
+		<h4>Footer content</h4>
+	</div>/footer -->
+
+    </div>
+    <!-- /page -->
+    <!------------------------------------------------------flickr API LLIST---------------------------------------------------------------------------->
+
+    <div data-role="page" id="about">
+
+        <div data-role="header" data-position="fixed" data-fullscreen="false" data-tap-toggle="false">
+
+            <h1>About</h1>
+        </div>
+        <!-- /header -->
+
+
+        <div role="main" class="ui-content">
+            <h3 class="ui-bar ui-bar-a ui-corner-all"></h3>
+            <div class="ui-body" style="background:white; font-weight:normal;box-shadow:1px 3px 5px 0px rgba(100,100,100,0.49) ;   border-radius:0px; border-top:none !important;">
+              <a href="#terms" id="events-btn" data-iconpos="bottom" data-mini="true" data-ajax="false" data-transition="slide" data-role="button">TERMS & CONDITION<br></a>
+              <a href="events.html" id="events-btn" data-iconpos="bottom" data-mini="true" data-ajax="false" data-transition="slide" data-role="button">UPCOMING EVENTS<br></a>
+             
+
+            </div>
+        </div>
+
+    </div>
+    <!-- /page -->
+    
+</body>
+
+</html>

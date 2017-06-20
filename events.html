@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta http-equiv="Cache-control" content="public">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1.0,maximum-scale=1,user-scalable=no" />
+    
+    <link rel="stylesheet" type="text/css" href="http://nanogallery.brisbois.fr/css/nanogallery.css">
+
+	<link href="js/light/nanogallery_light.css" rel="stylesheet" type="text/css">
+
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="scripts/jsmobile/jquery.nanogallery.min.js"></script>
+	<script type="text/javascript" src="js/nonogallery.js"></script>
+      
+	  <title>nanoGALLERY4 </title>
+
+  
+ 
+
+
+
+<script type='text/javascript'>//<![CDATA[
+$(window).load(function(){
+$(document).ready(function () {
+    jQuery("#nanoGallery").nanoGallery({
+        kind: 'flickr',
+        userID: '155101188@N06',
+        photoset:'72157684163059836',
+        
+        colorSchemeViewer: 'dark',
+ 
+        
+         thumbnailWidth: 'auto',
+         thumbnailHeight: 210,
+        thumbnailGutterWidth : 3,
+        thumbnailGutterHeight : 3,
+         /*thumbnailWidth: 125,
+        thumbnailHeight:'auto',*/
+        thumbnailLabel: {
+            position: 'overImageOnMiddle',
+            display: false,
+            displayDescription: true,
+            titleMaxLength: 20,
+            hideIcons: true,
+			touchAnimation: false,
+            align: 'center',
+            itemsCount: 'description'            
+        }, theme: 'light',
+		
+         colorScheme: { thumbnail:{ labelBackground: '#000 !important' } },
+        thumbnailHoverEffect:'borderLighter'
+    });
+});
+});//]]> 
+
+</script>
+
+  
+</head>
+
+ <body ontouchstart="">
+    <div id="app" class="app">
+      <!-- Navigation -->
+      <div class="navbar" >
+        <div class="button button-left menu" ><a href="index.html">&#9776;</a></div>
+       
+      </div>
+      <!-- Pages -->
+      <div id="home" class="page current">
+
+
+         <br>
+<div id="nanoGallery" ></div>
+    
+	
+  </div>
+    </div>
+</body>
+
+</html>

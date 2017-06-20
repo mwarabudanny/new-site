@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta http-equiv="Cache-control" content="public">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1.0,maximum-scale=1,user-scalable=no" />
+    
+    <link rel="stylesheet" type="text/css" href="http://nanogallery.brisbois.fr/css/nanogallery.css">
+
+	<link href="js/light/nanogallery_light.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="scripts/jsmobile/jquery.nanogallery.min.js"></script>
+	<script type="text/javascript" src="js/nonogallery.js"></script>
+      
+	  <title>Loopxer</title>
+
+  
+ 
+
+
+
+<script type='text/javascript'>//<![CDATA[
+$(window).load(function(){
+$(document).ready(function () {
+    jQuery("#nanoGallery").nanoGallery({
+        kind: 'flickr',
+        userID: '155101188@N06',
+        photoset:'72157682950020690',
+        
+        colorSchemeViewer: 'dark',
+ 
+        
+         thumbnailWidth: 'auto',
+         thumbnailHeight: 210,
+        thumbnailGutterWidth : 3,
+        thumbnailGutterHeight : 3,
+         /*thumbnailWidth: 125,
+        thumbnailHeight:'auto',*/
+        thumbnailLabel: {
+            position: 'overImageOnMiddle',
+            display: false,
+            displayDescription: true,
+            titleMaxLength: 20,
+            hideIcons: true,
+			touchAnimation: false,
+            align: 'center',
+            itemsCount: 'description'            
+        }, theme: 'light',
+		
+         colorScheme: { thumbnail:{ labelBackground: '#000 !important' } },
+        thumbnailHoverEffect:'borderLighter'
+    });
+});
+});//]]> 
+
+</script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<style>
+  
+
+.float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:40px;
+     overflow: hidden;
+	background-color:#0C9;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+}
+
+.my-float{
+	margin-top:22px;
+} 
+    </style>
+   <script type="text/javascript">
+$(window).load(function() {
+	$(".loader").fadeOut("slow");
+})
+    </script>
+    <style>
+        .loader {
+            position: fixed;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            
+        filter: alpha(opacity=75); /* internet explorer */
+        -khtml-opacity: 0.70; /* khtml, old safari */
+        -moz-opacity: 0.70; /* mozilla, netscape */
+        opacity: 0.70; /* fx, safari, opera */
+            background: url('loader3.gif') 50% 50% no-repeat rgb(249,249,249);
+        }
+    </style>
+
+</head>
+
+ <body ontouchstart="">
+     <div class="loader"></div>
+    <div id="app" class="app">
+      <!-- Navigation -->
+      <div class="navbar" >
+        <div class="button button-left menu" ><a href="index.html">&#9776;</a></div>
+       
+      </div>
+      <!-- Pages -->
+      <div id="home" class="page current">
+<a href="#" class="float">
+<i class="fa fa-plus my-float"></i>
+</a>
+
+         <br>
+<div id="nanoGallery" ></div>
+    
+	
+  </div>
+    </div>
+</body>
+
+</html>

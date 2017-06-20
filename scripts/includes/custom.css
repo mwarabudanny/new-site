@@ -1,0 +1,40 @@
+.ui-header{ background:white!important;}
+.logo{text-align:center;margin:0px}
+.ui-input-text.ui-custom{border-radius:0px; border:0;border-bottom:1px solid black;box-shadow:none;}
+.ui-input-search.ui-custom{ background-color:transparent!important;border-radius:0px; border:0;border-bottom:none;box-shadow:none;color:purple !important;}
+.ui-input-btn.custom-btn{border-radius:0px; border:0;border-bottom:2px solid black;box-shadow:none; }
+.center{text-align:center;}
+.blur-filter{-webkit-filter:blur(2px)}
+.ui-loader{display:none !important}
+.ui-header a{color:white !important;font-weight:normal}	   
+#events-btn:hover{background:rgba(255,255,255,0.7)}
+
+#specials{background:#dc143c; font-weight:normal; box-shadow:0px 0px 0px     rgba(100,100,100,0.49) ; color:white; border-radius:0px; text-shadow:0 0 0; color:white;border-color:grey; margin:5px;}
+#share{border:none;background:transparent !important;color:white; font-weight:normal; border-radius:0px;}
+
+#form{border-bottom:none}
+#share{border:none;background:none;color:white; font-weight:normal; border-radius:0px;margin:0px 10px 10px 10px}
+
+
+#events-btn{background:white; font-weight:normal!important; text-shadow:0 0 0;box-shadow:0px 0px 0px 0px rgba(100,100,100,0.49) ; color:#dc143c;border-color:#dc143c; border-radius:0px;margin:18px;padding:18px}
+#find-a-party-button{background:#dc143c; font-weight:normal; box-shadow:0px 1px 0px     rgba(100,100,100,0.49) ; color:white; border-radius:4px;border-top:none !important; border-color:#dc143c; margin:20px;padding:20px}
+#subscibre-button{background:white;  font-weight:normal; box-shadow:1px 1px 1px 1px rgba(100,100,100,0.49) ; color:black; border-radius:4px;margin:20px;padding:20px}
+#club-logo{background-color:white;box-shadow:0px 1px 3px rgba(100,100,100,0.49);border-radius:40px;text-shadow:0 0 0}
+#listclubs{background-color:white;color:#dc143c;border:none; box-shadow:0px 2px 3px rgba(100,100,100,0.49);margin-bottom:1px ;text-shadow:0 0 0}
+#no-results{display:none; }
+#custom-collapsible h3 a:hover{color:none;border-color:none;}
+#custom-collapsible h3 a{background:white;font-weight:normal;border-color:none;}
+#city{border:none !important; background:white;font-weight:normal;opacity:0.80;text-shadow:0 0 0 !important}
+#uber{background:black; font-weight:normal;text-shadow:0 0 0; color:white; border-radius:0px; border-color:white; }
+#direction{background:#dc143c; font-weight:normal; color:white; border-radius:0px; border-color:white; }
+#map{background:transparent! important;box-shadow:none;border:none}
+
+h1{font-weight:normal;}
+
+img{max-width:100%;
+}
+.in, .out {
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-duration: 350ms !important;
+}
+

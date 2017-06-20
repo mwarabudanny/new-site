@@ -1,0 +1,91 @@
+<html>
+
+<head>
+    <meta HTTP-EQUIV="refresh" CONTENT="30000">
+    <meta http-equiv="Cache-control" content="public">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1.0,maximum-scale=1,user-scalable=no" />
+    <meta http-equiv="imagetoolbar" content="no" />
+
+    <title>Loopxer</title>
+
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../scripts/includes/pull2refresh.css" type="text/css" />
+    <script src="../../scripts/jsmobile/pull2refresh.js"></script>
+    <link rel="stylesheet" href="../../scripts/includes/custom.css">
+    <link rel="stylesheet" href="../../scripts/jsmobile/jquery.mobile-1.4.5.min.css">
+    <!-- DATA -->
+    <script src="../../Data/johannesburgData.js"></script>
+    <script>
+        $(document).on('mobileinit', function() {
+            $.mobile.defaultPageTransition = 'slide';
+        });
+    </script>
+    <script src="../../scripts/jsmobile/jquery.mobile-1.4.5.min.js"></script>
+</head>
+
+<body oncontextmenu="return false;">
+    <div data-role="page" id="info-page" data-dom-cache="true">
+
+        <div data-role="header" data-position="fixed" data-tap-toggle="true" data-fullscreen="false" class="shadow">
+            <div class="logo"><img height="38"></div>
+            <a href="#" data-rel="back" class="ui-btn-icon ui-nodisc-icon ui-alt-icon" data-role="button" data-icon="carat-l" class="ui-nodisc-icon " data-iconpos="notext" data-iconshadow="false" style="background-color:transparent !important;
+               border:none;
+               border-style:hidden;
+               -webkit-box-shadow:none;
+               box-shadow:none;">home
+        </a>
+            <a href="../../index.html" class="ui-btn-icon ui-nodisc-icon ui-alt-icon" data-role="button" data-icon="home" class="ui-nodisc-icon " data-ajax="false" data-iconpos="notext" data-iconshadow="false" style="background-color:transparent !important;
+               border:none;
+               border-style:hidden;
+               -webkit-box-shadow:none;
+               box-shadow:none;">home
+        </a>
+        </div>
+
+
+       
+        <div id="content">
+            <div role="main">
+                <div>
+                    <form class="ui filterable" data-position="fixed" data-tap-toggle="false" id="form">
+                        <input id="filterBasic-input" Style="color:black;opacity:0.7;background-color:transparent;border-bottom:1px solid;border-color:grey" data-wrapper-class="ui-custom" data-type="search" data-mini="true" autocomplete="off" placeholder="Search by Name ,Type or Area">
+                    </form>
+                </div>
+
+                <ul data-role="listview" id="thelist" data-autodividers="false" data-autodividers="true" data-filter="true" data-icon="false" data-mini="true" data-input="#filterBasic-input" class="ui-nodisc-icon ui-alt-icon">
+
+
+                    <li id="no-results">
+                        <center>Search: no match found</center>
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!--second page -->
+    <div data-role="page" id="details-page" data-dom-cache="true">
+
+        <div data-role="header" data-position="fixed" data-tap-toggle="true"  id="simpleEdit">
+
+            <h1>Details</h1>
+            <a href="#" data-rel="back" class="ui-btn-icon ui-nodisc-icon ui-alt-icon" data-role="button" data-icon="carat-l" class="ui-nodisc-icon " data-iconpos="notext" data-iconshadow="false" style="background-color:transparent !important;
+               border:none;
+               border-style:hidden;
+               -webkit-box-shadow:none;
+               box-shadow:none;">home
+        </a>
+
+        </div>
+
+        <div data-role="content" style="padding:0px;margin:0px">
+
+        </div>
+
+    </div>
+</body>
+
+</html>
