@@ -379,7 +379,7 @@ $(document).on("pageinit", "#info-page", function () {
         //note the use of += in the variable
         //meaning I'm adding to the existing data. not replacing it.
         //store index value in array as id of the <a> tag
-       li  += '<li ><a href="#?id=1" id="' + i + '"  class="info-go" data-transition="flip" style="background:white;font-weight:600;color:black;box-shadw:none" >' + '<img src="'+data.img+'"  width="80" height="80" style="background-color:whites;box-shadow:0px 1px 3px rgba(100,100,100,0.49);border-radius:40px;"/>' + data.name.charAt(0).toUpperCase() + data.name.slice(1) +'</p>'+'<p style="color:grey;margin-top:-5px">'+data.type.toUpperCase()+"  " +data.area.charAt(0).toUpperCase() + data.area.slice(1)+'<p></li>'
+       li  += '<li ><a href="#?id=1" id="' + i + '"  class="info-go" data-transition="flip" style="background:white;font-weight:600;color:#4C4C4C;box-shadw:none" >' + '<img src="'+data.img+'"  width="80" height="80" style="background-color:whites;box-shadow:0px 1px 3px rgba(100,100,100,0.49);border-radius:40px;"/>' + data.name.charAt(0).toUpperCase() + data.name.slice(1) +'</p>'+'<p style="color:grey;margin-top:-5px">'+data.type.toUpperCase()+"  " +data.area.charAt(0).toUpperCase() + data.area.slice(1)+'<p></li>'
     });
  
     //append list to ul
