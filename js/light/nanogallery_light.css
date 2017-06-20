@@ -133,8 +133,6 @@
 .nanogallery_theme_light.fullpage{
 	display:block;
 	background-color: #000;
-	position: fixed;
-  top:0px;
   bottom:0px;
   left:0px;
   right:0px;
@@ -270,7 +268,6 @@
 /**************************************/
 
 .nanogallery_theme_light .nanoGalleryContainerParent {
-	position: relative;
 	text-align: center;
  	margin:0px auto;
 	box-sizing: content-box;
@@ -331,7 +328,7 @@
 }
 
 .nanogallery_theme_light .nanoGalleryContainer .nanoGalleryThumbnailContainer .imgContainer{
-	position:relative;
+
 	/*margin: 5px;*/
   overflow:hidden;
 	background:#000;
@@ -344,7 +341,6 @@
 .nanogallery_theme_light .nanoGalleryContainer .nanoGalleryThumbnailContainer img{
 	/* no border or padding allowed here */
 	/* background:url('loading.gif') no-repeat center; */
-	position: absolute; top: 0; bottom: 0; left: 0; right: 0; margin: auto;
 	display: block;
   vertical-align: bottom;
 	box-sizing: content-box;
@@ -361,7 +357,6 @@
 	text-align:left;
 	padding: 5px;
   left: 0px;
-	position:absolute;
 	min-height:0%;
 	overflow:hidden;
 	box-sizing: border-box;
@@ -474,7 +469,6 @@
 	margin: 10px auto 5px auto;
 	padding: 4px;
 	text-align:center;
-	position: relative;
 	box-sizing: content-box;
 	-webkit-box-sizing: content-box;
 	-moz-box-sizing: content-box;
@@ -534,7 +528,6 @@
 	/*font-size:1em;*/
 	background-color: rgba(1, 1, 1, 0.85);
 	text-align: center;
-	position: fixed;
 	box-sizing: content-box;
 	-webkit-box-sizing: content-box;
 	-moz-box-sizing: content-box;
@@ -549,7 +542,6 @@
 .nanogallery_theme_light #nanoGalleryViewer .nanoLogo {
   text-align: center;
   float: left;
-  position: relative;
   top: 1px;
   background: url(nano_logo.png) no-repeat center;  
   display: block;
@@ -592,9 +584,7 @@
 }
 
 .nanogallery_theme_light #nanoGalleryViewer .content {
-	/*display:block;*/
-	/*position:relative;*/
-  position:absolute;
+	display:block;
 	/*height:100%;*/
   clear:both;
 	padding:5px;
@@ -689,7 +679,6 @@
   right:0px;
   text-align: center;
   display:inline-block;
-  position:absolute;
 }
 
 .nanogallery_theme_light #nanoGalleryViewer .toolbar {
@@ -878,7 +867,6 @@
 /* LOADING BAR                        */
 /**************************************/
 .nanogallery_theme_light .nanoGalleryLBarOff {
-	position:relative;
   width:100%;
   visibility: hidden;
   height:2px;
@@ -886,7 +874,6 @@
   background-color:#555;
 }
 .nanogallery_theme_light .nanoGalleryLBar {
-	position:relative;
   width:100%;
   visibility: visible;
   height:2px;
@@ -894,7 +881,6 @@
   background-color:#555;
 }
 .nanogallery_theme_light .nanoGalleryLBar > div {
-	position:absolute;
 	width:50px;
 	height:2px;
 	top:0px;
