@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+<title>Spotify - Google map</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<SCRIPT language=JavaScript>
+  var message = "function disabled";
+  
+  </SCRIPT>
+<script>$( document ).ready(function() {
+  $('#hideMsg').append(localStorage.Sapion_U_iD)
+  if (!localStorage.SapionT){
+    self.location = "C:/Users/User/Desktop/Restfull_api/server-side/html/index.html";
+  }
+  console.log('the id :'+localStorage.Sapion_U_iD)
+  console.log('the role :'+localStorage.Sapion_U_R)
+  $('#logout').click(function(){
+            login_service_load()
+            /* localStorage.setItem("SapionToken", '');
+            localStorage.setItem("Sapion_U_iD", '');
+            localStorage.setItem("Sapion_U_R", '');
+            self.location = "C:/Users/User/Desktop/Restfull_api/server-side/html/index.html"; */
+});
+
+ function login_service_load(stringify_data){
+  var api_url = 'http://localhost:3000/api/device/'
+  var bearer_token='Bearer '+localStorage.SapionT
+    $.ajax({
+        url: api_url,
+        type: "GET",
+        contentType: "application/json;charset=utf-8",
+        dataType: 'json',
+        headers:{'Authorization':bearer_token},
+        data:stringify_data,
+        success: function(result){
+         if (result){
+           console.log("Results"+JSON.stringify(result))
+            //localStorage.setItem("SapionToken", result.token);
+            localStorage.setItem("SapionUser", result.token);
+           /*  if(result.role=='Admin'){
+              self.role_user='Admon'
+              self.location = "C:/Users/User/Desktop/Restfull_api/HTML_pages/dashboard.html";
+              console.log(result.role);
+            } */
+            console.log('the token :'+localStorage.SapionT)
+          }
+            
+        },
+        error: function(XMLHttpRequest, textStatus, errorThrown) {
+     alert("some error"+errorThrown);
+  }
+        
+  });
+
+ }
+  
+});</script>
+</head>
+
+<body>
+  <h1>Dashboard</h1>welcome <span id="hideMsg"></span>
+  
+<div id="txt"><button id='logout'/> LOG out</div>
+
+
+<script src="jquery.min.js" type="text/javascript" language="javascript"></script>
+</body>
+</html>

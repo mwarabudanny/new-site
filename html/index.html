@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+<title>Spotify - Google map</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<SCRIPT language=JavaScript>
+  var message = "function disabled";
+  
+  </SCRIPT>
+<script>$( document ).ready(function() {
+  $('#clickMe').click(function(){
+    localStorage.clear()
+  var stringify_data= JSON.stringify({ "user_id":$('#fname').val(), "password":$('#lname').val()});
+  login_service_load(stringify_data)
+});
+
+ function login_service_load(stringify_data){
+  var api_url = 'http://localhost:3000/api/user/login'
+    $.ajax({
+        url: api_url,
+        type: "POST",
+        contentType: "application/json;charset=utf-8",
+        dataType: 'json',
+        data:stringify_data,
+        success: function(result){
+         if (result){
+           console.log("->"+JSON.stringify(result.token))
+            localStorage.setItem("SapionT", result.token);
+            localStorage.setItem("Sapion_U_iD", result.data.user_id);
+            localStorage.setItem("Sapion_U_R", result.data.user_id);
+
+              self.location = "C:/Users/User/Desktop/Restfull_api/server-side/html/dashboard.html";
+           /*  if(result.role=='Admin'){
+              self.role_user='Admon'
+              console.log(result.role);
+            } */
+            console.log('the token :'+localStorage.SapionT)
+          }
+            
+        },
+        error: function(XMLHttpRequest, textStatus, errorThrown) {
+     alert("some error");
+  }
+        
+  });
+
+ }
+  
+});</script>
+</head>
+
+<body>
+
+
+  
+<p class="giveAccess">Login</p>
+<div id="map">
+  <label for="fname">First name:</label><br>
+  <input type="text" id="fname" name="fname"><br>
+  <label for="lname">Last name:</label><br>
+  <input type="text" id="lname" name="lname"><br><br></div>
+
+  <div id="txt"><button id='clickMe'/> LOGIN</div>
+
+<script src="jquery.min.js" type="text/javascript" language="javascript"></script>
+</body>
+</html>
