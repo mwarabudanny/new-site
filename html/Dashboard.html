@@ -46,10 +46,16 @@
             } */
             //console.log('the token :'+localStorage.SapionT)
           }
+          
             
         },
         error: function(XMLHttpRequest, textStatus, errorThrown) {
-     alert(JSON.stringify(XMLHttpRequest));
+          if (XMLHttpRequest.status=='401'){
+
+            alert(JSON.stringify('EXpired Token or connection issue'));
+
+          }
+
   }
         
   });
