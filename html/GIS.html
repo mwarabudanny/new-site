@@ -9,113 +9,326 @@
     html, body {height: 100%; margin: 0; padding: 0;}
     #map {height: 100%;}
     #content {position: relative; width: 100%; height: 100%;}
+    .clock {border-style: solid;
+  border-color: #00f8e7;
+    position: absolute;
+    top: -7px;
+    right: 60px;
+    padding: 15px;
+    font-size: 15px;
+    background: rgba(84, 68, 143, 0.3);
+    z-index: 1;
+    color: white;
+}
   </style>
 </head>
 <body>
   <h1>My Google Map</h1>
+  <p class="clock"><img src="shttps://cdn.dribbble.com/users/121337/screenshots/1024835/loading2.gif"></img>loading</p>
+
   <div id="map"></div>
   <script>
-var mapStyle = [ {
-  "type": "FeatureCollection",
-  "features": [
+var mapStyle =[
     {
-      "type": "Feature",
-      "properties": {
-        "marker-color": "#dc1000",
-        "marker-size": "medium",
-        "marker-symbol": "heliport",
-        "CAT_CODE": "novisad"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          19.8335496,
-          45.2671352
+        "featureType": "all",
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "saturation": 36
+            },
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 40
+            }
         ]
-      }
     },
     {
-      "type": "Feature",
-      "properties": {
-        "marker-color": "#2095c8",
-        "marker-size": "large",
-        "marker-symbol": "1",
-        "CAT_CODE": "beograd"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          20.4589216,
-          44.786568
+        "featureType": "all",
+        "elementType": "labels.text.stroke",
+        "stylers": [
+            {
+                "visibility": "on"
+            },
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 16
+            }
         ]
-      }
-    },
-	{
-      "type": "Feature",
-      "properties": {
-        "marker-color": "#dc0000",
-        "marker-size": "medium",
-        "marker-symbol": "",
-        "CAT_CODE": "beograd"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          20.5589216,
-          44.986568
-        ]
-      }
-    },
-	{
-      "type": "Feature",
-      "properties": {
-        "marker-color": "#f19",
-        "marker-size": "medium",
-        "marker-symbol": "3",
-        "CAT_CODE": "sarajevo"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          18.4130763,
-          43.8562586
-        ]
-      }
-    },
-	{
-      "type": "Feature",
-      "properties": {
-        "marker-color": "#3bd2d7",
-        "marker-size": "medium",
-        "marker-symbol": "2",
-        "CAT_CODE": "zagreb"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          15.981919,
-          45.8150108
-        ]
-      }
     },
     {
-      "type": "Feature",
-      "properties": {
-        "marker-color": "#dc1000",
-        "marker-size": "medium",
-        "marker-symbol": "",
-        "CAT_CODE": "novisad",
-		"moj_filter": "mojfilter"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          19.8335496,
-          45.2671352
+        "featureType": "all",
+        "elementType": "labels.icon",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
         ]
-      }
+    },
+    {
+        "featureType": "administrative",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "color": "#0f9324"
+            },
+            {
+                "lightness": 20
+            },
+            {
+                "visibility": "on"
+            }
+        ]
+    },
+    {
+        "featureType": "administrative",
+        "elementType": "geometry.stroke",
+        "stylers": [
+            {
+                "color": "#00700a"
+            },
+            {
+                "lightness": 17
+            },
+            {
+                "weight": 1.2
+            },
+            {
+                "visibility": "on"
+            }
+        ]
+    },
+    {
+        "featureType": "administrative",
+        "elementType": "labels.text",
+        "stylers": [
+            {
+                "color": "#93c991"
+            },
+            {
+                "visibility": "simplified"
+            }
+        ]
+    },
+    {
+        "featureType": "landscape",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "on"
+            },
+            {
+                "color": "#000000"
+            }
+        ]
+    },
+    {
+        "featureType": "landscape",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 20
+            },
+            {
+                "visibility": "on"
+            }
+        ]
+    },
+    {
+        "featureType": "landscape.natural",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "visibility": "on"
+            },
+            {
+                "color": "#000000"
+            }
+        ]
+    },
+    {
+        "featureType": "landscape.natural.landcover",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "visibility": "on"
+            },
+            {
+                "color": "#000000"
+            }
+        ]
+    },
+    {
+        "featureType": "landscape.natural.landcover",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "visibility": "on"
+            },
+            {
+                "color": "#000000"
+            }
+        ]
+    },
+    {
+        "featureType": "landscape.natural.landcover",
+        "elementType": "geometry.stroke",
+        "stylers": [
+            {
+                "visibility": "on"
+            },
+            {
+                "color": "#000000"
+            }
+        ]
+    },
+    {
+        "featureType": "landscape.natural.terrain",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "visibility": "on"
+            },
+            {
+                "color": "#000000"
+            }
+        ]
+    },
+    {
+        "featureType": "landscape.natural.terrain",
+        "elementType": "geometry.stroke",
+        "stylers": [
+            {
+                "visibility": "on"
+            },
+            {
+                "color": "#000000"
+            }
+        ]
+    },
+    {
+        "featureType": "poi",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 21
+            }
+        ]
+    },
+    {
+        "featureType": "poi",
+        "elementType": "labels.icon",
+        "stylers": [
+            {
+                "visibility": "on"
+            }
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 17
+            }
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "elementType": "geometry.stroke",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 29
+            },
+            {
+                "weight": 0.2
+            }
+        ]
+    },
+    {
+        "featureType": "road.arterial",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 18
+            }
+        ]
+    },
+    {
+        "featureType": "road.local",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 16
+            }
+        ]
+    },
+    {
+        "featureType": "transit",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 19
+            }
+        ]
+    },
+    {
+        "featureType": "water",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 17
+            }
+        ]
     }
-]}]
+]
+
+//time
+ 
+setInterval(function(){
+
+var currentTime = new Date();
+var hours = currentTime.getHours();
+var minutes = currentTime.getMinutes();
+var seconds = currentTime.getSeconds();
+
+// Add leading zeros
+minutes = (minutes < 10 ? "0" : "") + minutes;
+seconds = (seconds < 10 ? "0" : "") + seconds;
+hours = (hours < 10 ? "0" : "") + hours;
+
+// Compose the string for display
+var currentTimeString = hours + ":" + minutes + ":" + seconds;
+$(".clock").html(currentTimeString).draggable();
+
+},1000);
     
     function initMap(){
       
@@ -123,86 +336,7 @@ var mapStyle = [ {
       var options = {
         zoom:8,
         center:{lat:42.3601,lng:-71.0589},
-        styles: [
-            {elementType: 'geometry', stylers: [{color: '#242f3e'}]},
-            {elementType: 'labels.text.stroke', stylers: [{color: '#242f3e'}]},
-            {elementType: 'labels.text.fill', stylers: [{color: '#746855'}]},
-            {
-              featureType: 'administrative.locality',
-              elementType: 'labels.text.fill',
-              stylers: [{color: '#d59563'}]
-            },
-            {
-              featureType: 'poi',
-              elementType: 'labels.text.fill',
-              stylers: [{color: '#d59563'}]
-            },
-            {
-              featureType: 'poi.park',
-              elementType: 'geometry',
-              stylers: [{color: '#263c3f'}]
-            },
-            {
-              featureType: 'poi.park',
-              elementType: 'labels.text.fill',
-              stylers: [{color: '#6b9a76'}]
-            },
-            {
-              featureType: 'road',
-              elementType: 'geometry',
-              stylers: [{color: '#38414e'}]
-            },
-            {
-              featureType: 'road',
-              elementType: 'geometry.stroke',
-              stylers: [{color: '#212a37'}]
-            },
-            {
-              featureType: 'road',
-              elementType: 'labels.text.fill',
-              stylers: [{color: '#9ca5b3'}]
-            },
-            {
-              featureType: 'road.highway',
-              elementType: 'geometry',
-              stylers: [{color: '#746855'}]
-            },
-            {
-              featureType: 'road.highway',
-              elementType: 'geometry.stroke',
-              stylers: [{color: '#1f2835'}]
-            },
-            {
-              featureType: 'road.highway',
-              elementType: 'labels.text.fill',
-              stylers: [{color: '#f3d19c'}]
-            },
-            {
-              featureType: 'transit',
-              elementType: 'geometry',
-              stylers: [{color: '#2f3948'}]
-            },
-            {
-              featureType: 'transit.station',
-              elementType: 'labels.text.fill',
-              stylers: [{color: '#d59563'}]
-            },
-            {
-              featureType: 'water',
-              elementType: 'geometry',
-              stylers: [{color: '#17263c'}]
-            },
-            {
-              featureType: 'water',
-              elementType: 'labels.text.fill',
-              stylers: [{color: '#515c6d'}]
-            },
-            {
-              featureType: 'water',
-              elementType: 'labels.text.stroke',
-              stylers: [{color: '#17263c'}]
-            }
-          ]
+        styles:mapStyle
       }
 
       // New map
