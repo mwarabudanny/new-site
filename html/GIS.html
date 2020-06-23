@@ -24,7 +24,7 @@
 </head>
 <body>
   <h1>My Google Map</h1>
-  <p class="clock"><img src="shttps://cdn.dribbble.com/users/121337/screenshots/1024835/loading2.gif"></img>loading</p>
+  <p class="clock"></p>
 
   <div id="map"></div>
   <script>
@@ -313,7 +313,6 @@ var mapStyle =[
 //time
  
 setInterval(function(){
-
 var currentTime = new Date();
 var hours = currentTime.getHours();
 var minutes = currentTime.getMinutes();
@@ -356,7 +355,7 @@ $(".clock").html(currentTimeString).draggable();
           coords:{lat:42.7762,lng:-71.0773}
         }
       ];
-
+      
       // Loop through markers
       for(var i = 0;i < markers.length;i++){
         // Add marker
@@ -389,6 +388,8 @@ $(".clock").html(currentTimeString).draggable();
         }
       }
     }
+  </script>
+  <script src="/maps/documentation/javascript/examples/markerclusterer/markerclustererplus@4.0.1.min.js">
   </script>
   <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClDGFnyszA_dpXvvYW63HqTSOvz04JJps&callback=initMap">
