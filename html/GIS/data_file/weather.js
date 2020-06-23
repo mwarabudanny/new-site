@@ -1,22 +1,17 @@
-all_cities=[]
+ var all_cities=[]
      
 $( document ).ready(function() {
-     var cities=['lubumbashi','pretoria','johannesburg','cape town','durban'];
+     //var cities=['lubumbashi','pretoria','johannesburg','cape town','durban'];
+     var cities=['lubumbashi'];
      
      for(i=0;i<cities.length;i++){
         var city=cities[i];
         var api_url = 'http://api.openweathermap.org/data/2.5/weather?q='+city+'&APPID=847dd7d4f3281970db62a2928b0be868';
-        //console.log(" results: "+JSON.stringify(api_url))
-
         $.ajax({
         url: api_url,
         type: "GET",
         dataType: 'jsonp', 
-        headers: {
-            "accept": "application/json",
-            "Access-Control-Allow-Origin":"*"
-        },
-        async: false,
+        async: true,
         success: function(results){
             console.log(" results: "+JSON.stringify(results))
             var all_data=results
