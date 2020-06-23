@@ -5,7 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta http-equiv="refresh" content_="5"/>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+  
+  <script src="http://code.jquery.com/jquery-1.4.2.min.js" type="text/javascript"></script> 
+  <script  type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>  
+  <script  type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js" ></script>
   <title>Sapien IO</title>
   <style>
     html, body {height: 100%; margin: 0; padding: 0;}
@@ -31,12 +34,8 @@ $( document ).ready(function() {
 <body>
   <h1> Sapien IO</h1>
   <p class="clock"></p>
-
   <div id="map"></div>
   <script>
-
-
-    
     function initMap(){
       //, 
       // Map options
@@ -83,15 +82,11 @@ $( document ).ready(function() {
       }
     }
   </script>
-  
   <script src="data_file/marker_data.js" type="text/javascript" language="javascript"></script>
   <script src="js_files/jquery.min.js" type="text/javascript" language="javascript"></script>
   <script src="js_files/clock_time.js" type="text/javascript" language="javascript"></script>
   <script src="style_file/map_style.js" type="text/javascript" language="javascript"></script>
   <script src="data_file/weather.js" type="text/javascript" language="javascript"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-  <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClDGFnyszA_dpXvvYW63HqTSOvz04JJps&callback=initMap">
-    </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClDGFnyszA_dpXvvYW63HqTSOvz04JJps&callback=initMap"></script>
 </body>
 </html>

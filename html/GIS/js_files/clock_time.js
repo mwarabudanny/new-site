@@ -1,5 +1,6 @@
 //time
  
+$( document ).ready(function() {
 setInterval(function(){
     var currentTime = new Date();
     var hours = currentTime.getHours();
@@ -13,6 +14,6 @@ setInterval(function(){
     
     // Compose the string for display
     var currentTimeString = hours + ":" + minutes + ":" + seconds;
-    $(".clock").html(currentTimeString)//.draggable();
+    $(".clock").html(currentTimeString).draggable();
     
-    },1000);
+    },1000);})
