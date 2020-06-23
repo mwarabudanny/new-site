@@ -29,24 +29,7 @@
   <div id="map"></div>
   <script>
 
-//time
- 
-setInterval(function(){
-var currentTime = new Date();
-var hours = currentTime.getHours();
-var minutes = currentTime.getMinutes();
-var seconds = currentTime.getSeconds();
 
-// Add leading zeros
-minutes = (minutes < 10 ? "0" : "") + minutes;
-seconds = (seconds < 10 ? "0" : "") + seconds;
-hours = (hours < 10 ? "0" : "") + hours;
-
-// Compose the string for display
-var currentTimeString = hours + ":" + minutes + ":" + seconds;
-$(".clock").html(currentTimeString).draggable();
-
-},1000);
     
     function initMap(){
       //, 
@@ -60,20 +43,6 @@ $(".clock").html(currentTimeString).draggable();
       // New map
       var map = new google.maps.Map(document.getElementById('map'), options);
 
-      var markers = [
-        {
-          coords:{lat:-25.740603,lng:28.209105},
-          iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
-          content:'<h1>Lynn MA</h1>'
-        },
-        {
-          coords:{lat:-25.740236,lng:28.213664},
-         // content:'<h1>Amesbury '+<br>ssssssssssss<br>sssssssssssss<br>sssssssssss</h1>'
-        },
-        {
-          coords:{lat:42.7762,lng:-71.0773}
-        }
-      ];
 
       // Loop through markers
       for(var i = 0;i < markers.length;i++){
@@ -109,7 +78,9 @@ $(".clock").html(currentTimeString).draggable();
     }
   </script>
   
+  <script src="data_file/marker_data.js" type="text/javascript" language="javascript"></script>
   <script src="js_files/jquery.min.js" type="text/javascript" language="javascript"></script>
+  <script src="js_files/clock_time.js" type="text/javascript" language="javascript"></script>
   <script src="style_file/map_style.js" type="text/javascript" language="javascript"></script>
   <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClDGFnyszA_dpXvvYW63HqTSOvz04JJps&callback=initMap">
