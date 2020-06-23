@@ -10,12 +10,13 @@
   
   </SCRIPT>
 <script>$( document ).ready(function() {
+ //Wweather()
   $('#clickMe').click(function(){
     localStorage.clear()
   var stringify_data= JSON.stringify({ "user_id":$('#fname').val(), "password":$('#lname').val()});
-  login_service_load(stringify_data)
+  //login_service_load(stringify_data)
 });
-
+/* 
  function login_service_load(stringify_data){
   var api_url = 'http://localhost:3000/api/user/login'
     $.ajax({
@@ -36,19 +37,19 @@
               self.role_user='Admon'
               console.log(result.role);
             } */
-            console.log('the token :'+localStorage.SapionT)
+          /*   console.log('the token :'+localStorage.SapionT)
           }
             
         },
         error: function(XMLHttpRequest, textStatus, errorThrown) {
-     alert("some error");
+     alert("some error HERE");
   }
         
   });
 
- }
-  
-});</script>
+ } 
+ */ 
+}); </script>
 </head>
 
 <body>
@@ -64,7 +65,8 @@
 
   <div id="txt"><button id='clickMe'/> LOGIN</div>
 
-<script src="jquery.min.js" type="text/javascript" language="javascript"></script>
+  <script src="jquery.min.js" type="text/javascript" language="javascript"></script>
+  <script src="GIS/data_file/weather.js" type="text/javascript" language="javascript"></script>
 </body>
 </html>
       

@@ -36,7 +36,7 @@
         data:stringify_data,
         success: function(result){
          if (result){
-           console.log("Results"+JSON.stringify(result[3]))
+           console.log("Results"+JSON.stringify(result))
             //localStorage.setItem("SapionToken", result.token);
             localStorage.setItem("SapionUser", result.token);
            /*  if(result.role=='Admin'){
@@ -46,8 +46,6 @@
             } */
             //console.log('the token :'+localStorage.SapionT)
           }
-          
-            
         },
         error: function(XMLHttpRequest, textStatus, errorThrown) {
           if (XMLHttpRequest.status=='401'){

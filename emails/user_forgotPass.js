@@ -20,7 +20,7 @@ module.exports = {
         });
       
         let info = await transporter.sendMail({
-          from: '"SapienIO 👻" <foo@example.com>', // sender address
+          from: '"noreply 👻" <foo@example.com>', // sender address
           to: sent_to, //user_email, // list of receivers
           subject: "Email Reset", // Subject line
           text: "Read bellow", // plain text body
@@ -33,16 +33,10 @@ module.exports = {
                  <h2>
                  Dear User you have been Assign to our System
                  </h2>
-                 <p style='color:#A9A9A9; text-align:left;' >
-                 Congratulations!
-                </p>
                 <p style='color:#A9A9A9;'>
-                 You are in. You can click on this link to activate <a style='text-decoration: none;' href='http://localhost:3000/api/user/confirmation/${token}'> 111 Click here</a>. 
+                 Please Click on the link to activate  you account<a style='text-decoration: none;' href='http://localhost:3000/api/user/confirmation/${token}'> CLICK HERE Click here</a>. 
                 </p>
-                <a style='text-decoration: none; color: #337ab7;' href='{1}'>         
-                <p>
-                    Prove that you can click like a pro!
-                </p>
+               
                 </a>
                 <p style='font-size:0.8em; color:#A9A9A9; text-decoration:none;'>
                 <a style='text-decoration:none;' href='#'>example.com</a> is a question and answer site for students, academia and professionals to get recognized for sharing their valuable knowledge.

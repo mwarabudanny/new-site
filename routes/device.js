@@ -36,7 +36,6 @@ const RoleAuth = require('../middleware/roles-auth');
     
          router.post('/',(req,res)=>{
         var post_data={_id:new mongoose.Types.ObjectId(),
-          
                       device_id:req.body.device_id,
                       device_name:req.body.device_name,
                       device_address:req.body.device_address,

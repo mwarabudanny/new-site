@@ -21,6 +21,14 @@
     color: white;
 }
   </style>
+
+
+
+
+<script>$( document ).ready(function() {
+    weather()
+ 
+  });</script>
 </head>
 <body>
   <h1>My Google Map</h1>
@@ -35,7 +43,7 @@
       //, 
       // Map options
       var options = {
-        zoom:8,
+        zoom:10,
         center:{lat:-25.740603,lng:28.209105},
         styles:mapStyle_
       }
@@ -82,6 +90,7 @@
   <script src="js_files/jquery.min.js" type="text/javascript" language="javascript"></script>
   <script src="js_files/clock_time.js" type="text/javascript" language="javascript"></script>
   <script src="style_file/map_style.js" type="text/javascript" language="javascript"></script>
+  <script src="data_file/weather.js" type="text/javascript" language="javascript"></script>
   <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClDGFnyszA_dpXvvYW63HqTSOvz04JJps&callback=initMap">
     </script>
