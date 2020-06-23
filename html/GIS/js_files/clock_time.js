@@ -13,6 +13,6 @@ setInterval(function(){
     
     // Compose the string for display
     var currentTimeString = hours + ":" + minutes + ":" + seconds;
-    $(".clock").html(currentTimeString).draggable();
+    $(".clock").html(currentTimeString)//.draggable();
     
     },1000);

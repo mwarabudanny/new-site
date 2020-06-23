@@ -14,9 +14,9 @@
   $('#clickMe').click(function(){
     localStorage.clear()
   var stringify_data= JSON.stringify({ "user_id":$('#fname').val(), "password":$('#lname').val()});
-  //login_service_load(stringify_data)
+  login_service_load(stringify_data)
 });
-/* 
+
  function login_service_load(stringify_data){
   var api_url = 'http://localhost:3000/api/user/login'
     $.ajax({
@@ -37,7 +37,7 @@
               self.role_user='Admon'
               console.log(result.role);
             } */
-          /*   console.log('the token :'+localStorage.SapionT)
+            console.log('the token :'+localStorage.SapionT)
           }
             
         },
@@ -48,7 +48,7 @@
   });
 
  } 
- */ 
+
 }); </script>
 </head>
 

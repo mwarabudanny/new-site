@@ -1,3 +1,8 @@
+
+setInterval(function(){ 
+	console.log("Oooo Yeaaa!");
+}, 2000)
+    
     var lat='£'
       var markers = [
         {
