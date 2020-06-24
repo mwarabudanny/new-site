@@ -1,15 +1,15 @@
 
 
-var html=`<div class="panel-group" id="all-data-table" role="tablist" aria-multiselectable="true">
+var html_=`<div class="panel-group" id="all-data-table" role="tablist" aria-multiselectable="true">
 <div class="panel panel-default">
   <div class="panel-heading" role="tab" id="heading-all-data-table">
     <h4 class="panel-title">
       <a role="button" data-toggle="collapse" data-parent="#all-data-table" href="#collapse-all-data-table" aria-expanded="true" aria-controls="collapse-all-data-table">
-        Collapsible Group Item #1
+       <button type="button" class="btn btn-success">Daily Stats</button>
       </a>
     </h4>
   </div>
-  <div id="collapse-all-data-table" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading-all-data-table">
+  <div id="collapse-all-data-table" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading-all-data-table">
     <div class="panel-body">
          <table id="example" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
       <thead>
@@ -660,3 +660,4 @@ var html=`<div class="panel-group" id="all-data-table" role="tablist" aria-multi
   </div>
 </div>
 </div>`
+$("#table_query").append(html_)

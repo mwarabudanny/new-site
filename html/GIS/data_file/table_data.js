@@ -10,27 +10,39 @@ $( document ).ready(function() {
 		<thead>
 		<tr>
 		<th>Header</th>
-		<th>Header</th>
+		<th>status</th>
+		<th>TL name</th>
+		<th>TL number</th>
 		</tr>
 		</thead>
 		<tbody>
 			<tr>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			</tr>
+			<tr>
+				<td>item</td>
+				<td>item</td>
 				<td>item</td>
 				<td>item</td>
 			</tr>
 			<tr>
 				<td>item</td>
 				<td>item</td>
-			</tr>
-			<tr>
 				<td>item</td>
 				<td>item</td>
 			</tr>
 			<tr>
 				<td>item</td>
 				<td>item</td>
+				<td>item</td>
+				<td>item</td>
 			</tr>
 			<tr>
+				<td>item</td>
+				<td>item</td>
 				<td>item</td>
 				<td>item</td>
 			</tr>

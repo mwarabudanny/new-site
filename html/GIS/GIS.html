@@ -11,6 +11,11 @@
   <script  src="http://code.jquery.com/jquery-1.4.2.min.js" type="text/javascript"></script> 
   <script  type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>  
   <script  type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js" ></script>
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.9/css/dataTables.bootstrap.min.css">  
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> 
+<link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.6.2/css/buttons.dataTables.min.css">  
+<link rel="stylesheet" href="https://nightly.datatables.net/responsive/css/responsive.dataTables.min.css">
+
   <title>Sapien IO</title>
   <style>
 
@@ -24,6 +29,13 @@
     padding: 15px;
     font-size: 15px;
     z-index: 1;
+    } .table_query{
+    position: absolute;
+    top: -7px;
+    right: 60px;
+    padding: 15px;
+    font-size: 15px;
+    z-index: 999;
     }
     .clock {border-style: solid;
   border-color: #00f8e7;
@@ -39,15 +51,25 @@
   </style>
 <script>
 $( document ).ready(function() {
+  $('#example').DataTable( { /* 
+       dom: 'Bfrtip',  */
+       responsive: true,
+       order: ['5', 'desc'],
+
+      /* buttons: [
+       'excel', 'pdf', 'csv'
+     ]  */
+} );
     $('.clock').draggable()
     $('.table_d').draggable()
     console.log( "ready!" );
 });</script>
 </head>
 <body>
-  <h1> Sapien IO</h1>
   <p class="clock"></p>
   <p class="table_d"></p>
+  <div class="row" id='table_query'>
+  </div>
   <div id="map"></div>
   <script>
     function initMap(){
@@ -99,8 +121,19 @@ $( document ).ready(function() {
   <script src="data_file/marker_data.js" type="text/javascript" language="javascript"></script>
   <script src="js_files/clock_time.js" type="text/javascript" language="javascript"></script>
   <script src="data_file/table_data.js" type="text/javascript" language="javascript"></script>
+  <script src="data_file/table_devices_status.js" type="text/javascript" language="javascript"></script>
   <script src="style_file/map_style.js" type="text/javascript" language="javascript"></script>
   <script src="data_file/weather.js" type="text/javascript" language="javascript"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClDGFnyszA_dpXvvYW63HqTSOvz04JJps&callback=initMap"></script>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" type="text/javascript"></script>
+  <script src="https://cdn.datatables.net/1.10.10/js/jquery.dataTables.min.js" type="text/javascript"></script>
+  <script src="https://cdn.datatables.net/1.10.10/js/dataTables.bootstrap.min.js" type="text/javascript"></script>
+  <script src="https://cdn.datatables.net/buttons/1.0.3/js/buttons.html5.min.js" type="text/javascript"></script>
+  <script src="https://cdn.datatables.net/buttons/1.0.3/js/dataTables.buttons.min.js" type="text/javascript"></script>
+  <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js" type="text/javascript"></script>
+  <script src="https://nightly.datatables.net/responsive/js/dataTables.responsive.min.js" type="text/javascript"></script>  
+  
+
 </body>
 </html>
