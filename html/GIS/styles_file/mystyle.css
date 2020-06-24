@@ -1,0 +1,10 @@
+
+
+.table-services table { margin: 0 0 30px; border-collapse:collapse; width: 100%;  }
+.table-services table thead tr th, 
+.table-services table tr td { height: 50px; padding: 0 20px 0 20px; vertical-align: middle; text-align: center; }
+.table-services table thead tr hd {  }
+.table-services table thead tr th { background: #734E71; color: #fff; }
+.table-services table  tr td { background: #f8f7f6; color: #445859; border-bottom: 1px solid #fff; }
+.table-services table tr:nth-child(even) td { background: #f3f2f1 }
+.table-services table tfoot tr td { background-color: #f1efed; color: #49c4be; font-weight: bold; padding: 0; text-align: center; }
