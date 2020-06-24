@@ -12,3 +12,6 @@
     margin-left: 29px;
     border-top-color: #ddd;
 }
+.panel-group {
+    margin-bottom: 0px !important;
+}
