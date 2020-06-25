@@ -24,7 +24,7 @@
     #content {position: relative; width: 100%; height: 100%;}
     .table_d{
     position: absolute;
-    top: -7px;
+    bottom: 0px;
     right: 60px;
     padding: 15px;
     font-size: 15px;
@@ -54,11 +54,16 @@ $( document ).ready(function() {
   
      bearer_token='Bearer '+localStorage.SapionT
     var table = $('#example').DataTable({
+      dom: 'Bfrtip',
+      buttons: [
+       'excel', 'pdf', 'csv'
+     ]  ,
        order: ['7', 'desc'],
         'ajax':{url:'http://localhost:3000/api/device/',
                headers: { 'Authorization': bearer_token }
-              }, 
-        "columns": [
+              },
+              
+        "aoColumns": [
             { "data": "device_id" },
             { "data": "device_name" },
             { "data": "device_address" },
@@ -67,22 +72,12 @@ $( document ).ready(function() {
             { "data": "lattiude" },
             { "data": "longitude" },
             { "data": "record_date" },
-            {"data:": 'ddd',
-              "render": function (data, type, row) {
-              if ( row.device_status === '0') {
-              return '<center><img src="icons_maps/red.png" width="20" height="20"></center>';}
-              else {
-               return '<center><img src="icons_maps/green.png" width="20" height="20"></center>';
-            }
-        }
- 
-    }
-            
-        ]
+            { "data":"imageUrl"}
+             ]
     });
     setInterval( function () {
     table.ajax.reload( null, false ); // user paging is not reset on reload
-}, 30000 );
+}, 15000 );
  /*  $('#example').DataTable( { 
        dom: 'Bfrtip',  
        responsive: true,
@@ -118,12 +113,16 @@ $( document ).ready(function() {
       var map = new google.maps.Map(document.getElementById('map'), options);
 
 
-      // Loop through markers
+      
+
+      setInterval(function(){ 
+        // Loop through markers
       for(var i = 0;i < markers.length;i++){
         // Add marker
         addMarker(markers[i]);
       }
-
+	console.log("Oooo Yeaaa!");
+}, 2000);
       // Add Marker Function
       function addMarker(props){
         var marker = new google.maps.Marker({

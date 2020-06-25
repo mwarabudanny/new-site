@@ -21,3 +21,7 @@
     color: white !important;
     border-top: 0 !important;
 }
+.table.table-bordered.dataTable tbody td {
+    height: 30px !important;
+    border-bottom-width: 0 !important;
+}
