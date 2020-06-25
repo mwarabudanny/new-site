@@ -51,11 +51,13 @@
   </style>
 <script>
 $( document ).ready(function() {
+  
+     bearer_token='Bearer '+localStorage.SapionT
     var table = $('#example').DataTable({
-       //serverSide: true,
-       order: ['8', 'desc'],
-        'ajax':{url:'http://localhost:3000/api/device/'
-                }, 
+       order: ['7', 'desc'],
+        'ajax':{url:'http://localhost:3000/api/device/',
+               headers: { 'Authorization': bearer_token }
+              }, 
         "columns": [
             { "data": "device_id" },
             { "data": "device_name" },
@@ -64,20 +66,23 @@ $( document ).ready(function() {
             { "data": "town" },
             { "data": "lattiude" },
             { "data": "longitude" },
-            { "data": "device_status" },
-            { "data": "record_date" },{"data:": "record_date",
+            { "data": "record_date" },
+            {"data:": '',
               "render": function (data, type, row) {
-              if ({"data":"device_status"} =='0') {
+              if ( row.device_status === '0') {
               return '<center><img src="icons_maps/red.png" width="20" height="20"></center>';}
               else {
                return '<center><img src="icons_maps/green.png" width="20" height="20"></center>';
-          }
+            }
         }
  
     }
             
         ]
     });
+    setInterval( function () {
+    table.ajax.reload( null, false ); // user paging is not reset on reload
+}, 10000 );
  /*  $('#example').DataTable( { 
        dom: 'Bfrtip',  
        responsive: true,

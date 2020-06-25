@@ -23,7 +23,6 @@ var html_=`<div class="panel-group" id="all-data-table" role="tablist" aria-mult
             <th>town</th>
             <th>lattiude</th>
             <th>longitude</th>
-            <th>device_status</th>
             <th>record_date</th>
             <th>status</th>
         </tr>
