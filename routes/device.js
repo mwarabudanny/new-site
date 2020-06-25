@@ -14,7 +14,7 @@ const RoleAuth = require('../middleware/roles-auth');
 
             if (results){
               for(i=0;i<results.length;i++){
-                 var dataObj={}
+                var dataObj={}
                 var data=results[i]
                 var device_id= data.device_id;
                 var device_name=data.device_name;
