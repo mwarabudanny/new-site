@@ -15,3 +15,9 @@
 .panel-group {
     margin-bottom: 0px !important;
 }
+.table>thead:first-child>tr:first-child>th {
+    background: #4cae4c !important;
+    padding: 16px !important;
+    color: white !important;
+    border-top: 0 !important;
+}

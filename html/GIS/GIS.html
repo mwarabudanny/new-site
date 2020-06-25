@@ -51,15 +51,42 @@
   </style>
 <script>
 $( document ).ready(function() {
-  $('#example').DataTable( { /* 
-       dom: 'Bfrtip',  */
+    var table = $('#example').DataTable({
+       //serverSide: true,
+       order: ['8', 'desc'],
+        'ajax':{url:'http://localhost:3000/api/device/'
+                }, 
+        "columns": [
+            { "data": "device_id" },
+            { "data": "device_name" },
+            { "data": "device_address" },
+            { "data": "region" },
+            { "data": "town" },
+            { "data": "lattiude" },
+            { "data": "longitude" },
+            { "data": "device_status" },
+            { "data": "record_date" },{"data:": "record_date",
+              "render": function (data, type, row) {
+              if ({"data":"device_status"} =='0') {
+              return '<center><img src="icons_maps/red.png" width="20" height="20"></center>';}
+              else {
+               return '<center><img src="icons_maps/green.png" width="20" height="20"></center>';
+          }
+        }
+ 
+    }
+            
+        ]
+    });
+ /*  $('#example').DataTable( { 
+       dom: 'Bfrtip',  
        responsive: true,
        order: ['5', 'desc'],
 
-      /* buttons: [
+      buttons: [
        'excel', 'pdf', 'csv'
-     ]  */
-} );
+     ]  
+} ) */
     $('.clock').draggable()
     $('.table_d').draggable()
     console.log( "ready!" );
@@ -70,6 +97,7 @@ $( document ).ready(function() {
   <p class="table_d"></p>
   <div class="row" id='table_query'>
   </div>
+</div>
   <div id="map"></div>
   <script>
     function initMap(){

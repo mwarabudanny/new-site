@@ -8,7 +8,8 @@ const RoleAuth = require('../middleware/roles-auth');
 
  //router.get('/',checkAuth,RoleAuth.admin_role,(req,res)=>{
   router.get('/',(req,res)=>{
-          device.find().exec().then( data=>{
+          device.find().exec().then( results=>{
+             var data={"data": results}
                 res.status(200).json(data)
               }
              ).catch(err => {
