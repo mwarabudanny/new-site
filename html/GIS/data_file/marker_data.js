@@ -27,7 +27,7 @@ a(function(results) {
         device_id=data.device_id
         device_status=data.device_status
         device_data.coords={lat: device_lat, lng: device_lng}
-        device_data.content=`<h5>Device: ${device_id}</h5>
+        device_data.content=`<h5 id='devide_id'>Device: ${device_id}</h5>
                               <h5>Status: ${data.region}</h5>`
         if (device_status=='0'){
            device_data.iconImage='icons_maps/power_off.png'

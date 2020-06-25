@@ -3,7 +3,7 @@ var a = function(callback)
 {
     
 
-     var cities=['lubumbashi','kinshasa','pretoria','johannesburg','cape town','durban','maputo','mossel bay'];
+     var cities=['lubumbashi','nelpruit','polokwane','kinshasa','pretoria','johannesburg','cape town','durban','maputo','mossel bay'];
      
      var all_cities= '';
      for(i=0;i<cities.length;i++){
@@ -34,7 +34,7 @@ a(function(data) {
    weather_data.content=`<h5>City: ${name}</h5>
                          <h5>Status: ${status}</h5>
                          <h5>Desc: ${description}</h5>`
-   weather_data.iconImage=`http://openweathermap.org/img/wn/${icon}@2x.png`
+   weather_data.iconImage=`icons_maps/weather/weather_${icon}.png`
     markers.push(weather_data)
 });
 //console.log(markers)

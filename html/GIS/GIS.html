@@ -85,15 +85,7 @@ $( document ).ready(function() {
     table.ajax.reload( null, false ); // user paging is not reset on reload
 }, 15000 );
 
-$('.push_note').click(function(){Push.create("Hello world!", {
-    body: "How's it hangin'?",
-    icon: '/icon.png',
-    timeout: 4000,
-    onClick: function () {
-        window.focus();
-        this.close();
-    }
-});
+$('.push_note').click(function(){Push.create('Hello World!');
 })
 $('.clock').draggable()
    // $('body').remove()
@@ -149,18 +141,10 @@ $('.clock').draggable()
             content:props.content
           });
 
-          marker.addListener('click', toggleBounce,function(){
+          marker.addListener('click',function(){
             infoWindow.open(map, marker);
           });
-           // Removes the markers from the map, but keeps them in the array.
-          function clearMarkers() {
-           setMapOnAll(null);
-           }
-
-         // Shows any markers currently in the array.
-          function showMarkers() {
-            setMapOnAll(map);
-            }
+      
           function toggleBounce() {
         if (marker.getAnimation() !== null) {
           marker.setAnimation(null);
