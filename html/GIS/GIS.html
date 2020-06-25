@@ -62,7 +62,6 @@ $( document ).ready(function() {
         'ajax':{url:'http://localhost:3000/api/device/',
                headers: { 'Authorization': bearer_token }
               },
-              
         "aoColumns": [
             { "data": "device_id" },
             { "data": "device_name" },
@@ -79,7 +78,8 @@ $( document ).ready(function() {
     table.ajax.reload( null, false ); // user paging is not reset on reload
 }, 15000 );
 
-    $('.clock').draggable()
+$('.clock').draggable()
+   // $('body').remove()
     $('.table_d').draggable()
     console.log( "ready!" );
 });</script>
@@ -103,10 +103,6 @@ $( document ).ready(function() {
 
       // New map
       var map = new google.maps.Map(document.getElementById('map'), options);
-
-
-      
-
       setInterval(function(){ 
         // Loop through markers
       for(var i = 0;i < markers.length;i++){

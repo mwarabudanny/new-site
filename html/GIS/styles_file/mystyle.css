@@ -25,3 +25,8 @@
     height: 30px !important;
     border-bottom-width: 0 !important;
 }
+.panel-default>.panel-heading {
+    background-color: #111010 !important;
+}.panel-default>.panel-heading+.panel-collapse>.panel-body {
+    border-top-color: #000 !important;
+}
