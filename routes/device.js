@@ -7,7 +7,7 @@ const RoleAuth = require('../middleware/roles-auth');
 
 
  //router.get('/',checkAuth,RoleAuth.admin_role,(req,res)=>{
-  router.get('/',(req,res)=>{
+  router.get('/',checkAuth,(req,res)=>{
           device.find().exec().then( results=>{
             console.log()
             all_data=[]

@@ -78,15 +78,7 @@ $( document ).ready(function() {
     setInterval( function () {
     table.ajax.reload( null, false ); // user paging is not reset on reload
 }, 15000 );
- /*  $('#example').DataTable( { 
-       dom: 'Bfrtip',  
-       responsive: true,
-       order: ['5', 'desc'],
 
-      buttons: [
-       'excel', 'pdf', 'csv'
-     ]  
-} ) */
     $('.clock').draggable()
     $('.table_d').draggable()
     console.log( "ready!" );
