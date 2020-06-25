@@ -1,32 +1,49 @@
-
+var lat='£'
+var markers = [
+  {
+    coords:{lat:-25.740603,lng:28.209105},
+    iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+    content:`<h1>${lat} Lynn MA</h1>`
+  },
+ 
+  {
+    coords:{lat:-24.734534603,lng:27.709105},
+    iconImage:'http://openweathermap.org/img/wn/10d@2x.png'
+ 
+  }
+];
+var a = function(callback)
+{
     
-    var lat='£'
-      var markers = [
-        {
-          coords:{lat:-25.740603,lng:28.209105},
-          iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
-          content:`<h1>${lat} Lynn MA</h1>`
-        },
+
+     var cities=['lubumbashi','pretoria','johannesburg','cape town','durban'];
+     //var cities=['lubumbashi'];
+     var all_cities= '';
+     for(i=0;i<cities.length;i++){
+        
+        var city=cities[i];
+        var api_url = 'http://api.openweathermap.org/data/2.5/weather?q='+city+'&APPID=847dd7d4f3281970db62a2928b0be868';
+        $.ajax({
+            url: api_url,
+              dataType: 'json',
+            async: false,
+            success: callback
+          }); 
+    }
        
-        {
-          coords:{lat:-24.734534603,lng:27.709105},
-          iconImage:'http://openweathermap.org/img/wn/10d@2x.png'
-       
-        },{
-          coords:{lat:-25.8905,lng:28.105416}
-        }, {
-          coords:{lat:-29.793333,lng:29.498055}
-        }, {
-          coords:{lat:-25.757403,lng:28.374559}
-        }, {
-          coords:{lat:-27.78732,lng:28.003233999}
-        },{
-          coords:{lat:-25.841944,lng:28.031389}
-        },{
-          coords:{lat:-25.826671,lng:28.268273}
-        },{
-          coords:{lat:-30.3717,lng:30.148354}
-        },{
-          coords:{lat:-26.01666,lng:28.204579999}
-        }
-      ];
+};
+
+
+a(function(data) {
+    //console.log(data);
+    //alert(JSON.stringify(data));
+    markers.push(data)
+});
+      
+
+
+
+
+console.log(markers)
+    
+   
