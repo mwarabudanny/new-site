@@ -19,7 +19,8 @@
     "mongoose": "^5.9.2",
     "morgan": "^1.9.1",
     "multer": "^1.4.2",
-    "nodemailer": "^6.4.8"
+    "nodemailer": "^6.4.8",
+    "push.js": "^1.0.12"
   },
   "devDependencies": {
     "nodemon": "^2.0.2"

@@ -66,7 +66,7 @@ User.find(
     });
 });
 
-router.get('/confirmation/:tokenV',(req, res) => {
+router.get('/confirmation/:tokenV',(req, res,next) => {
   var verification_token= req.params.tokenV ;
   if ( verification_token){
    var token_get=jwt.verify(verification_token,process.env.JWT_KEY);
@@ -87,10 +87,6 @@ router.get('/confirmation/:tokenV',(req, res) => {
    });
 
   }
-  res.status(401).json({
-    message: "Auth faid >>>(confirmation)donts exist"
-  });
-  
 });
 
 router.get('/forgotPass/:user_id',(req, res) => {

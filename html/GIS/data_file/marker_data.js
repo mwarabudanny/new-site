@@ -1,6 +1,6 @@
 
 $( document ).ready(function() {
-var a = function(callback)
+  var a = function(callback)
 {       
         var api_url = 'http://localhost:3000/api/device/';
         $.ajax({
@@ -12,6 +12,7 @@ var a = function(callback)
           });
        
 };
+console.log("device");
 
 
 a(function(results) {
@@ -28,21 +29,31 @@ a(function(results) {
         device_data.coords={lat: device_lat, lng: device_lng}
         device_data.content=`<h5>Device: ${device_id}</h5>
                               <h5>Status: ${data.region}</h5>`
-         device_data.iconImage='https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
+        if (device_status=='0'){
+           device_data.iconImage='icons_maps/power_off.png'
+        } else if (device_status=='1'){
+          device_data.iconImage='icons_maps/power_on.png'
+       }else if (device_status=='2'){
+          device_data.iconImage='icons_maps/maintenance.png'
+        }else{
+          device_data.iconImage='icons_maps/pending_instalation.png'
+        }
          
-         console.log('))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))00'+JSON.stringify(device_data))
+         //console.log('))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))00'+JSON.stringify(device_data))
          markers.push(device_data) 
       }
 
     }
 
-});})
+}
+
+);})
       
 
 
 
 
-console.log(markers)
+//console.log(markers)
 
 
 
