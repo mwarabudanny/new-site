@@ -67,7 +67,7 @@ $( document ).ready(function() {
             { "data": "lattiude" },
             { "data": "longitude" },
             { "data": "record_date" },
-            {"data:": '',
+            {"data:": 'ddd',
               "render": function (data, type, row) {
               if ( row.device_status === '0') {
               return '<center><img src="icons_maps/red.png" width="20" height="20"></center>';}
@@ -82,7 +82,7 @@ $( document ).ready(function() {
     });
     setInterval( function () {
     table.ajax.reload( null, false ); // user paging is not reset on reload
-}, 10000 );
+}, 30000 );
  /*  $('#example').DataTable( { 
        dom: 'Bfrtip',  
        responsive: true,
