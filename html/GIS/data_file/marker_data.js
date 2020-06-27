@@ -7,7 +7,7 @@ $( document ).ready(function() {
              url:api_url,
              headers: { 'Authorization': 'Bearer '+localStorage.SapionT },
              dataType: 'json',
-            async: false,
+             async: false,
             success: callback
           });
        
@@ -26,9 +26,8 @@ a(function(results) {
         device_lng=data.longitude*1
         device_id=data.device_id
         device_status=data.device_status
+        status_img=data.imageUrl
         device_data.coords={lat: device_lat, lng: device_lng}
-        device_data.content=`<h5 id='devide_id'>Device: ${device_id}</h5>
-                              <h5>Status: ${data.region}</h5>`
         if (device_status=='0'){
            device_data.iconImage='icons_maps/power_off.png'
         } else if (device_status=='1'){
@@ -38,9 +37,13 @@ a(function(results) {
         }else{
           device_data.iconImage='icons_maps/pending_instalation.png'
         }
+        device_data.content=`<h5>Device Id: ${device_id}</h5>
+                             <h5>Region: ${data.region}</h5>
+                             <h5>Status: ${device_status}</h5>
+                             <h5>Status icon : ${status_img}</h5>`
          
-         //console.log('))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))00'+JSON.stringify(device_data))
-         markers.push(device_data) 
+         //c00000000000000000000sonsole.log('))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))00'+JSON.stringify(device_data))
+        markers.push(device_data) 
       }
 
     }
@@ -49,17 +52,6 @@ a(function(results) {
 
 );})
       
-
-
-
-
-//console.log(markers)
-
-
-
-
-
-var lat='£'
 var markers = [
   
 ];

@@ -141,17 +141,16 @@ $('.clock').draggable()
             content:props.content
           });
 
-          marker.addListener('click',function(){
+          /* marker.addListener('click',function(){
             infoWindow.open(map, marker);
-          });
+          }); */
       
-          function toggleBounce() {
-        if (marker.getAnimation() !== null) {
-          marker.setAnimation(null);
-        } else {
-          marker.setAnimation(google.maps.Animation.BOUNCE);
-        }
-      }
+          marker.addListener('mouseover', function() {
+            infoWindow.open(map, marker);
+                    });
+          marker.addListener('mouseout', function() {
+           infowindow.close();
+              });
         }
       }
     }
