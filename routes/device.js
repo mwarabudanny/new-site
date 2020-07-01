@@ -28,18 +28,18 @@ const RoleAuth = require('../middleware/roles-auth');
                 var imageUrl=''
                 if(device_status=='0'){
                  // console.log("is one"+device_id)
-                  imageUrl+='<center><img src="icons_maps/red.png" width="20" height="20"></center>';
+                  imageUrl+='<img src="icons_maps/red.png" width="20" height="20">';
                   
                 }else 
                 if(device_status=='1'){
-                  imageUrl+='<center><img src="icons_maps/green.png" width="20" height="20"></center>'
+                  imageUrl+='<img src="icons_maps/green.png" width="20" height="20">'
                
                 }else 
                 if(device_status=='2'){
-                  imageUrl+='<center><img src="icons_maps/orange.png" width="20" height="20"></center>'
+                  imageUrl+='<img src="icons_maps/orange.png" width="20" height="20">'
                
                 } else{
-                  imageUrl+='<center><img src="icons_maps/white.png" width="20" height="20"></center>'
+                  imageUrl+='<img src="icons_maps/white.png" width="20" height="20">'
                
                 }
                 dataObj.device_id=device_id

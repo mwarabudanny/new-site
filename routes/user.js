@@ -184,7 +184,7 @@ router.post("/login", (req, res, next) => {
             },
             process.env.JWT_KEY,
             {
-                expiresIn: "1h"
+                expiresIn: "1m"
             }
           );
           var status=user[0].user_status;
