@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const mongoose = require("mongoose");
-//const bcrypt = require("bcrypt");
+const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const User = require("../models/user");
 const confirmation_email = require("../emails/user_confirmation_email");
@@ -184,7 +184,7 @@ router.post("/login", (req, res, next) => {
             },
             process.env.JWT_KEY,
             {
-                expiresIn: "1m"
+                expiresIn: "1d"
             }
           );
           var status=user[0].user_status;
