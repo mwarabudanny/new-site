@@ -155,11 +155,12 @@ function login_service_load(stringify_data){
         data:stringify_data,
         success: function(result){
          if (result){
-           console.log("->"+JSON.stringify(result.token))
+           // alert("s44444444444444");
+            console.log("->"+JSON.stringify(result.token))
             localStorage.setItem("SapionT", result.token);
             localStorage.setItem("Sapion_U_iD", result.data.user_id);
             localStorage.setItem("Sapion_U_R", result.data.user_id);
-            self.location = "C:/Users/User/Desktop/Restfull_api/server-side/html/GIS/GIS.html";
+            self.location = "file:///Users/crystalk/Downloads/sapianIO-master/html/GIS/GIS.html";
             console.log('the token :'+localStorage.SapionT)
           }
             

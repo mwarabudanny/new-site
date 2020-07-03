@@ -67,7 +67,7 @@ $( document ).ready(function() {
        order: ['7', 'desc'],
         'deferLoading': 57,
         'ajax':{url:'http://localhost:3000/api/device/',
-               //headers: { 'Authorization': bearer_token },
+               headers: { 'Authorization': bearer_token },
                
                error: function (xhr, error, code)
             {
