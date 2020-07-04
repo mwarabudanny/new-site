@@ -1,8 +1,6 @@
 const device= require('../models/device')
 
-module.exports =  {
-    
-    all_devices:(req,res)=>{
+module.exports.all_devices= (req,res)=>{
     device.find().exec().then( results=>{
       all_data=[]
       if (results){
@@ -62,4 +60,4 @@ module.exports =  {
         });
          }
         
-        }
+        

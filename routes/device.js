@@ -1,13 +1,14 @@
 const express=require('express');
 const router=express.Router(); // this creates the router needed to handle http function(get,post,path,delete)
 const device=require('../models/device')
+const devices_ctrl=require('../controllers/devices')
 const  mongoose=require('mongoose')
 const checkAuth = require('../middleware/user-auth');
 const RoleAuth = require('../middleware/roles-auth');
-const Devices = require('../controllers/users');
+
 
  //router.get('/',checkAuth,RoleAuth.admin_role,(req,res)=>{
-  router.get('/',Devices.all_devices) 
+  router.get('/',checkAuth,RoleAuth.admin_role,devices_ctrl.all_devices) 
                  
   router.get("/:id", (req, res, next) => {
                      const id = req.params.id;
