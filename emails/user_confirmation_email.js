@@ -1,7 +1,4 @@
-const express=require('express'); //this import express to this page
-const app =express(); // this call the express methods c
 const nodemailer = require("nodemailer");
-const jwt = require("jsonwebtoken");
 module.exports = {
 
     confirmation_email_func: async (user_email,token)=> {

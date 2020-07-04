@@ -1,15 +1,7 @@
-const express=require('express'); //this import express to this page
-const app =express(); // this call the express methods c
 const nodemailer = require("nodemailer");
-const jwt = require("jsonwebtoken");
 module.exports = {
 
         reset_email_func: async (sent_to,token)=> {
-        // Generate test SMTP service account from ethereal.email
-        // Only needed if you don't have a real mail account for testing
-        let testAccount = await nodemailer.createTestAccount();
-      
-        // create reusable transporter object using the default SMTP transport
         let transporter = nodemailer.createTransport({
           service: 'gmail',
           host: 'smtp.gmail.com',
