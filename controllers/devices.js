@@ -1,11 +1,30 @@
 const device= require('../models/device')
 
 module.exports.get_all_devices= (req,res)=>{
-    device.find()
-    .limit(6)
-    .sort({'record_date': -1})
+    sort_by=req.body.sort
+    var query_input={}
+    if (req.body.device_name){
+      query_input.device_name=req.body.device_name
+    }if (req.body.device_id){
+      query_input.device_id=req.body.device_id
+    }if (req.body.device_address){
+      query_input.device_address=req.body.device_address
+    }if (req.body.region){
+      query_input.region=req.body.region
+    }if (req.body.town){
+      query_input.town=req.body.town
+    }if (req.body.device_status){
+      query_input.device_status=req.body.device_status
+    }else{
+      query_input
+    }
+    
+    console.log('query_device_id: '+JSON.stringify(query_input))
+    device.find(query_input)
+    .limit(req.body.limit)
+    .sort({[sort_by]: -1})
     .exec()
-    .then( results=>{
+    .then( results =>{
       all_data=[]
       if (results){
         for(i=0;i<results.length;i++){
@@ -22,7 +41,6 @@ module.exports.get_all_devices= (req,res)=>{
           var record_date=data.record_date
           var imageUrl=''
           if(device_status=='0'){
-           // console.log("is one"+device_id)
             imageUrl+='<img src="icons_maps/red.png" width="20" height="20">';
             
           }else 
