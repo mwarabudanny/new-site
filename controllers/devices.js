@@ -13,8 +13,10 @@ module.exports.get_all_devices= (req,res)=>{
       query_input.region=req.body.region
     }if (req.body.town){
       query_input.town=req.body.town
-    }if (req.body.device_status){
+    } if (req.body.device_status){
       query_input.device_status=req.body.device_status
+    }if (req.body.record_date){
+      query_input.record_date=req.body.record_date
     }else{
       query_input
     }

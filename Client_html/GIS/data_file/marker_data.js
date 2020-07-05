@@ -2,11 +2,24 @@
 $( document ).ready(function() {
     var a = function(callback)
     {       
-            var api_url = 'http://localhost:3000/api/device/';
+            var api_url = 'http://localhost:3000/api/device/getList';
+            var s_data= JSON.stringify({
+            "town":"",
+            "device_id":"",
+            "device_name": "2",
+            "device_address":"",
+            "region":"",
+            "device_status":"2",
+            "sort":"region",
+            "record_date":"",
+            "limit":4})
             $.ajax({
                  url:api_url,
                  headers: { 'Authorization': 'Bearer '+localStorage.SapionT },
                  dataType: 'json',
+                 contentType: 'application/json',
+                 type:"POST",
+                 data:s_data,
                  async: false,
                 success: callback
               });

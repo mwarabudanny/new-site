@@ -1,6 +1,6 @@
 const mongoose=require('mongoose')
 
-var device_structure={  _id:mongoose.Schema.Types.ObjectId,
+var device_structure={ _id:mongoose.Schema.Types.ObjectId,
                        device_id:{type: String,required: true},
                        device_name:String,
                        device_address:String,

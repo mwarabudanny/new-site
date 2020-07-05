@@ -66,9 +66,9 @@ $( document ).ready(function() {
      ]  , */
        order: ['7', 'desc'],
         'deferLoading': 57,
-        'ajax':{url:'http://localhost:3000/api/device/',
+        'ajax':{url:'http://localhost:3000/api/device/getList',
                headers: { 'Authorization': bearer_token },
-               
+               type:"POST",
                error: function (xhr, error, code)
             {
               

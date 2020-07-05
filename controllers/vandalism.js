@@ -34,8 +34,11 @@ module.exports.get_all_vandalism= (req,res)=>{
             });
              }
 module.exports.get_all_vandalism_by_user= (req,res)=>{
-    vandalism.find({ report_by:'dannynho' }).exec().then( results=>{
-                          
+    var sort_by="report_date"
+    vandalism.find({ report_by:'dannynho' })
+    .limit(1000)
+    .sort({[sort_by]: -1}).exec()
+    .then( results=>{                  
             var data={"data": results}
              res.status(200).json(data)
             }

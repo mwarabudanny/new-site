@@ -42,5 +42,5 @@ $( document ).ready(function() {
 	</table>
 	</div>
 </div>`
-$(".table_d").append(html)
+$(".table_d").append()
 })
