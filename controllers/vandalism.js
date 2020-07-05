@@ -1,0 +1,46 @@
+
+const vandalism= require('../models/vandalism')
+const mongoose = require("mongoose");
+
+module.exports.create_vandalism=(req,res)=>{
+    var post_data={_id:new mongoose.Types.ObjectId(),
+                  report_by:req.body.report_by,
+                  type:req.body.type,
+                  description:req.body.description,
+                  area:req.body.area,
+                  latitude:req.body.latitude,
+                  longitude:req.body.longitude,
+                  solved_by:req.body.solved_by, 
+                  transformer_ID:req.body.transformer_ID,
+                  image_url:req.body.image_url}
+    const Vandalism_Obj_input= new vandalism(post_data)
+    Vandalism_Obj_input.save().then(data =>{
+    const message={message:'order was created',
+                   status:201,
+                   created_data:post_data}
+           res.status(200).json(message)
+    }
+    ).catch(err => console.log(err));
+    }
+module.exports.get_all_vandalism= (req,res)=>{
+    vandalism.find().exec().then( results=>{
+          
+           var data={"data": all_data}
+              res.status(200).json(data)
+            }
+           ).catch(err => {
+              console.log(err);
+              res.status(500).json({ error: err });
+            });
+             }
+module.exports.get_all_vandalism_by_user= (req,res)=>{
+    vandalism.find({ report_by:'dannynho' }).exec().then( results=>{
+                          
+            var data={"data": results}
+             res.status(200).json(data)
+            }
+            ).catch(err => {
+                console.log(err);
+                 res.status(500).json({ error: err });
+                });
+                             }

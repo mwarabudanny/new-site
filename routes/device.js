@@ -8,7 +8,8 @@ const RoleAuth = require('../middleware/roles-auth');
 
 
  //router.get('/',checkAuth,RoleAuth.admin_role,(req,res)=>{
-  router.get('/',checkAuth,RoleAuth.admin_role,devices_ctrl.get_all_devices)      
+  //router.get('/',checkAuth,RoleAuth.admin_role,devices_ctrl.get_all_devices)
+  router.get('/',devices_ctrl.get_all_devices)      
   router.get("/:id",checkAuth,devices_ctrl.get_device_by_id);
   router.post('/', devices_ctrl.create_device)
   router.patch("/:id",devices_ctrl.patch_device);

@@ -1,7 +1,11 @@
 const device= require('../models/device')
 
 module.exports.get_all_devices= (req,res)=>{
-    device.find().exec().then( results=>{
+    device.find()
+    .limit(6)
+    .sort({'record_date': -1})
+    .exec()
+    .then( results=>{
       all_data=[]
       if (results){
         for(i=0;i<results.length;i++){

@@ -3,7 +3,7 @@ var a = function(callback)
 {
     
 
-     var cities=['lubumbashi','nelpruit','polokwane','kinshasa','pretoria','johannesburg','cape town','durban','maputo','mossel bay'];
+     var cities=['lubumbashi','lusaka','nelpruit','polokwane','kinshasa','pretoria','johannesburg','cape town','durban','maputo','mossel bay'];
      
      var all_cities= '';
      for(i=0;i<cities.length;i++){

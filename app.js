@@ -8,6 +8,7 @@
   //const html_render=require('../api/all_files_project/temple_render/index')
   const user=require('./routes/user')
   const device=require('./routes/device')
+  const vandalism=require('./routes/vandalism')
   var connection_string='mongodb+srv://dannynho:'+process.env.Monog_PW+'@ourdb-uczbc.mongodb.net/test?retryWrites=true&w=majority'
   mongoose.connect(connection_string,{useUnifiedTopology: true,useNewUrlParser: true,})
   mongoose.set('useCreateIndex', true);
@@ -31,6 +32,7 @@
 //app.use('/api/products',user_role);
 app.use('/api/device',device);
 app.use('/api/user',user);
+app.use('/api/vandalism',vandalism);
 
 app.use((req,res,next)=>{
   const error =new Error('not found');
