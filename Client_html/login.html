@@ -155,7 +155,7 @@ function login_service_load(stringify_data){
         data:stringify_data,
         success: function(result){
          if (result){
-           alert("s44444444444444");
+           alert("test");
             console.log("->"+JSON.stringify(result))
             localStorage.setItem("SapionT", result.token);
             localStorage.setItem("Sapion_U_iD", result.data.user_id);
